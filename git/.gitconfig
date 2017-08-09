@@ -1,0 +1,5 @@
+[user]
+	name = Scott
+	email = mabezdev@gmail.com
+[push]
+	default = current

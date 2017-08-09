@@ -1,0 +1,13 @@
+{
+	"color_scheme": "Packages/Agila Theme/Agila Monokai Extended.tmTheme",
+	"fade_fold_buttons": false,
+	"font_face": "Space Mono",
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Colorsublime",
+		"Vintage"
+	],
+	"skin": "Agila Theme/Agila - Monokai",
+	"theme": "Agila Monokai.sublime-theme"
+}
