@@ -1,4 +1,5 @@
 [Appearance]
+BoldIntense=false
 ColorScheme=monokai
 Font=Space Mono,17,-1,5,50,0,0,0,0,0,Regular
 UseFontLineChararacters=true
