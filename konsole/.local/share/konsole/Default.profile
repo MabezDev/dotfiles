@@ -1,7 +1,7 @@
 [Appearance]
 BoldIntense=false
 ColorScheme=monokai
-Font=Space Mono,17,-1,5,50,0,0,0,0,0,Regular
+Font=Space Mono,16,-1,0,50,0,0,0,0,0
 UseFontLineChararacters=true
 
 [General]

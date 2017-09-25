@@ -1,10 +1,20 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-#export TERM=konsole
+export TERM=konsole
 export PATH=$PATH:/home/mabez/programs/xtensa-esp32-elf/bin
+export PATH=/usr/share/bcc/tools:$PATH
 export IDF_PATH=/home/mabez/programs/esp-idf
+
+export PATH=$PATH:/opt/cudnn6
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
+export CUDA_HOME=/opt/cuda/
+
 export LIBVIRT_DEFAULT_URI="qemu:///system"
+export QEMU_AUDIO_DRV=alsa
+#export QEMU_PA_SERVER=/run/user/1000/pulse/native
+#export QEMU_PA_SINK=alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo
+#export QEMU_PA_SOURCE=input
 
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
