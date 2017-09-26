@@ -96,6 +96,7 @@ bindsym $mod+a focus parent
 set $wrk1 "1:  Terminals"
 set $wrk2 "2:  Browsing"
 set $wrk3 "3:  Editor"
+set $wrk4 "4:  Virtulization"
 set $wrk9 "9:  IM"
 set $wrk10 "10:  Music"
 
@@ -104,7 +105,7 @@ set $wrk10 "10:  Music"
 bindsym $mod+1 workspace $wrk1
 bindsym $mod+2 workspace $wrk2
 bindsym $mod+3 workspace $wrk3
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace $wrk4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -116,7 +117,7 @@ bindsym $mod+0 workspace $wrk10
 bindsym $mod+Shift+1 move container to workspace $wrk1
 bindsym $mod+Shift+2 move container to workspace $wrk2
 bindsym $mod+Shift+3 move container to workspace $wrk3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace $wrk4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -168,6 +169,10 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Move workspaces to a different monitor
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
+
 
 set $purple #4a2c5b
 # 504960
@@ -192,14 +197,24 @@ bar {
 
 new_window pixel 5
 
+set $mon1 DVI-I-1
+set $mon2 DP-1
+# Assign workspaces to monitors
+# workspace $workspace1 output [Monitor COnnection]
+workspace $wrk9 output $mon2
+workspace $wrk10 output $mon2
+workspace $wrk3 output $mon1 # Set editor to open on main mon always
 
+# Assign apps to workspaces
 # assign [class="^Spotify"] $wrk10, doesn't work thiw spotify : https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace $wrk10
 assign [class="discord"] $wrk9
 
+# Autorun
 exec_always "compton"
 exec_always "setxkbmap -layout gb"
 exec_always "feh --bg-scale /home/mabez/programs/wp.png"
+# Exec once
 exec "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144"
 exec --no-startup-id spotify
 exec --no-startup-id discord

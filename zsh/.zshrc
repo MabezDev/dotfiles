@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export TERM=konsole
+#export TERM=konsole
 export PATH=$PATH:/home/mabez/programs/xtensa-esp32-elf/bin
 export PATH=/usr/share/bcc/tools:$PATH
 export IDF_PATH=/home/mabez/programs/esp-idf
