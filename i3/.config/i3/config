@@ -173,6 +173,11 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
+# Open Ranger
+bindsym $mod+Shift+f exec konsole -e ranger
+
+# i3lock
+bindsym $mod+Shift+o exec /home/mabez/.config/i3/scripts/customlock.sh
 
 set $purple #4a2c5b
 # 504960
