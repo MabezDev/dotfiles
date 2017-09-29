@@ -158,10 +158,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $update && pkill -RTMIN+2 i3blocks
+
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 10%+ $update  #increase sound volume
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #decrease sound volume
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
 
 # Media Controls
 bindsym XF86AudioPlay exec playerctl play
@@ -179,28 +181,42 @@ bindsym $mod+Shift+f exec konsole -e ranger
 # i3lock
 bindsym $mod+Shift+o exec /home/mabez/.config/i3/scripts/customlock.sh
 
-set $purple #4a2c5b
-# 504960
-set $faded #2a1c33
+#set $purple #4a2c5b
+#set $faded #2a1c33
+set $purple #34bcbc
+set $faded #3c5572
+set $bar_bg #3c557226
+
 client.focused          $purple $purple #ffffff $purple $purple
 client.focused_inactive $faded $faded #ffffff $faded $faded
 client.unfocused        $faded $faded #edeff2 $faded $faded
 client.urgent           #8e8e79 #8e8e79 #ffffff #900000   #900000
+
+# gaps stuff
+
+gaps inner 20
+gaps outer 5
+
+smart_gaps on
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         position top
 	colors {
+                background $bar_bg
 		focused_workspace          $purple $purple #ffffff #2e9ef4   #28557p
 		active_workspace $faded $faded #ffffff #484e50   #5f676a
 		inactive_workspace        $faded $faded #ffffff #292d2e   #222222
 		urgent_workspace           #8e8e79 #8e8e79 #ffffff #900000   #900000
 	}
-        status_command i3status
+	i3bar_command i3bar -t
+        status_command i3blocks
 }
 
-new_window pixel 5
+
+new_window pixel 0
 
 set $mon1 DVI-I-1
 set $mon2 DP-1
@@ -216,12 +232,11 @@ for_window [class="Spotify"] move to workspace $wrk10
 assign [class="discord"] $wrk9
 
 # Autorun
-exec_always "compton"
+exec_always --no-startup-id compton
 exec_always "setxkbmap -layout gb"
-exec_always "feh --bg-scale /home/mabez/programs/wp.png"
+exec_always "feh --bg-scale /home/mabez/programs/wp_arch_blue.jpg"
 # Exec once
 exec "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144"
 exec --no-startup-id spotify
 exec --no-startup-id discord
-
-
+# exec --no-startup-id google-chrome-stable --new-window https://discordapp.com/channels/326031025870340097/326031025870340097

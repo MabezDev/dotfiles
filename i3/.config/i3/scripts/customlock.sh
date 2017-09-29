@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Config options here : https://github.com/chrjguill/i3lock-color
+
 i3lock -k --blur 6 --timecolor=FFFFFFD0 \
 	--datecolor=FFFFFFD0 \
 	--insidecolor=FFFFFF00 \
