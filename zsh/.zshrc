@@ -16,6 +16,9 @@ export QEMU_AUDIO_DRV=alsa
 #export QEMU_PA_SINK=alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo
 #export QEMU_PA_SOURCE=input
 
+# Alias
+alias mterm="python -m serial.tools.miniterm"
+
 # Path to your oh-my-zsh installation.
 ZSH=/usr/share/oh-my-zsh/
 
