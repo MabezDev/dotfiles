@@ -6,12 +6,12 @@ export PATH=$PATH:/home/mabez/programs/xtensa-esp32-elf/bin
 export PATH=/usr/share/bcc/tools:$PATH
 export IDF_PATH=/home/mabez/programs/esp-idf
 
-export PATH=$PATH:/opt/cudnn6
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
-export CUDA_HOME=/opt/cuda/
+#export PATH=$PATH:/opt/cudnn6
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
+#export CUDA_HOME=/opt/cuda/
 
-export LIBVIRT_DEFAULT_URI="qemu:///system"
-export QEMU_AUDIO_DRV=alsa
+#export LIBVIRT_DEFAULT_URI="qemu:///system"
+#export QEMU_AUDIO_DRV=alsa
 #export QEMU_PA_SERVER=/run/user/1000/pulse/native
 #export QEMU_PA_SINK=alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo
 #export QEMU_PA_SOURCE=input
@@ -20,13 +20,14 @@ export QEMU_AUDIO_DRV=alsa
 alias mterm="python -m serial.tools.miniterm"
 
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+#ZSH=$HOME/.oh-my-zsh/
+export ZSH=/home/mabez/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
+#ZSH_THEME="simple"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -107,8 +108,18 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zshplugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zshplugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $HOME/.zshplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion:*:sudo::' environ PATH="/sbin:/usr/sbin:$PATH" HOME="/root"
+
+autoload -U compinit 
+#promptinit
+compinit
+#promptinit; prompt gentoo
+
+
 
 #neofetch
