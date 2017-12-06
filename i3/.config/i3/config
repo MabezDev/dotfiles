@@ -169,6 +169,8 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute 
 # Media Controls
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
+# bindcode 164 exec playerctl play
+# bindcode 164 exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
@@ -219,8 +221,8 @@ bar {
 
 new_window pixel 0
 
-set $mon1 DVI-I-1
-set $mon2 DP-1
+set $mon1 DVI-0
+set $mon2 DisplayPort-0
 # Assign workspaces to monitors
 # workspace $workspace1 output [Monitor COnnection]
 workspace $wrk9 output $mon2
@@ -235,9 +237,13 @@ assign [class="discord"] $wrk9
 # Autorun
 exec_always --no-startup-id compton
 exec_always "setxkbmap -layout gb"
-exec_always "feh --bg-scale $HOME/.wallpapers/wp_arch_blue.jpg"
+#exec_always "feh --bg-scale $HOME/.wallpapers/wp_arch_blue.jpg"
+exec_always "feh --bg-scale $HOME/.wallpapers/arch_wp_combined.png"
+
 # Exec once
-exec "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144"
+#exec "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144"
+exec "$HOME/scripts/util/dual_144hz.sh"
 exec --no-startup-id spotify
 exec --no-startup-id discord
+exec --no-startup-id "ckb --background"
 # exec --no-startup-id google-chrome-stable --new-window https://discordapp.com/channels/326031025870340097/326031025870340097

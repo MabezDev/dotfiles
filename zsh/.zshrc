@@ -1,16 +1,26 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Fix Ctrl+arrow word traversal in urvtx
+bindkey "^[Od" backward-word
+bindkey "^[Oc" forward-word
+
+export EDITOR=vim
+
 #export TERM=konsole
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/home/mabez/programs/xtensa-esp32-elf/bin
 export PATH=/usr/share/bcc/tools:$PATH
 export IDF_PATH=/home/mabez/programs/esp-idf
-
+# temp while gentoo stlink is broke
+#export PATH=$PATH:$HOME/programs/stlink/build/Release
+#export PATH=$PATH:$HOME/programs/arm-gcc/gcc-arm-none-eabi-6-2017-q2-update/bin
 #export PATH=$PATH:/opt/cudnn6
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
 #export CUDA_HOME=/opt/cuda/
 
-#export LIBVIRT_DEFAULT_URI="qemu:///system"
+export LIBVIRT_DEFAULT_URI="qemu:///system"
 #export QEMU_AUDIO_DRV=alsa
 #export QEMU_PA_SERVER=/run/user/1000/pulse/native
 #export QEMU_PA_SINK=alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo
