@@ -67,10 +67,19 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=
-#instance=/mnt/data
+label=/  
+instance=/
 interval=30
 
+[disk]
+label=/vms 
+instance=/vms
+interval=30
+
+[disk]
+label=/home 
+instance=/home/mabez
+interval=30
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
@@ -95,7 +104,7 @@ interval=30
 # see the script for details.
 [cpu_usage]
 label= 
-interval=5
+interval=1
 min_width=100.00%
 #separator=false
 

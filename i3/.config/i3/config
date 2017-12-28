@@ -233,6 +233,7 @@ workspace $wrk3 output $mon1 # Set editor to open on main mon always
 # assign [class="^Spotify"] $wrk10, doesn't work thiw spotify : https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace $wrk10
 assign [class="discord"] $wrk9
+assign [class="looking-glass-client"] $wrk8
 
 # Autorun
 exec_always --no-startup-id compton
