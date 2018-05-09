@@ -223,12 +223,12 @@ bar {
 new_window pixel 0
 
 
-# i3 shutdown
-
-set $mode_power [l]ogoff | [s]hutdown
+# i3 power
+set $mode_power [l]lock | [s]hutdown | [r]eboot
 mode "$mode_power" {
-	bindsym l exec --no-startup-id i3-msg exit, mode "default"
-        bindsym s exec --no-startup-id $HOME/.config/i3/scripts/shutdown, mode "default"
+	bindsym l exec --no-startup-id $HOME/.config/i3/scripts/power lock, mode "default"
+        bindsym s exec --no-startup-id $HOME/.config/i3/scripts/power shutdown, mode "default"
+        bindsym r exec --no-startup-id $HOME/.config/i3/scripts/power reboot, mode "default"
 	bindsym Return mode "default"
         bindsym Escape mode "default"
 }
