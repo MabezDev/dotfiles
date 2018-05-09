@@ -1,0 +1,11 @@
+#!/bin/bash
+
+VMS_RUNNING=$(virsh list --name | wc -l)
+# VMS_RUNNING="4"
+echo $VMS_RUNNING
+if [ $VMS_RUNNING -gt 1 ]; then
+    notify-send "Failed to shutdown" "Virtual machines are stilling running." --icon=dialog-warning
+fi
+
+dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" \
+	/org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop

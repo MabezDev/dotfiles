@@ -97,6 +97,7 @@ set $wrk1 "1:  Terminals"
 set $wrk2 "2:  Browsing"
 set $wrk3 "3:  Editor"
 set $wrk4 "4:  Virtulization"
+set $wrk5 "5:  Media"
 set $wrk9 "9:  IM"
 set $wrk10 "10:  Music"
 
@@ -106,7 +107,7 @@ bindsym $mod+1 workspace $wrk1
 bindsym $mod+2 workspace $wrk2
 bindsym $mod+3 workspace $wrk3
 bindsym $mod+4 workspace $wrk4
-bindsym $mod+5 workspace 5
+bindsym $mod+5 workspace $wrk5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -118,7 +119,7 @@ bindsym $mod+Shift+1 move container to workspace $wrk1
 bindsym $mod+Shift+2 move container to workspace $wrk2
 bindsym $mod+Shift+3 move container to workspace $wrk3
 bindsym $mod+Shift+4 move container to workspace $wrk4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+5 move container to workspace $wrk5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
@@ -179,10 +180,10 @@ bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
 # Open Ranger
-bindsym $mod+Shift+f exec konsole -e ranger
+#bindsym $mod+Shift+f exec konsole -e ranger
 
 # i3lock
-bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/customlock.sh
+#bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/customlock.sh
 
 #set $purple #4a2c5b
 #set $faded #2a1c33
@@ -221,6 +222,18 @@ bar {
 
 new_window pixel 0
 
+
+# i3 shutdown
+
+set $mode_power [l]ogoff | [s]hutdown
+mode "$mode_power" {
+	bindsym l exec i3-msg exit
+        bindsym s exec $HOME/.config/i3/scripts/shutdown
+	bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+Shift+o  mode "$mode_power"
+
 set $mon1 DVI-0
 set $mon2 DisplayPort-0
 # Assign workspaces to monitors
@@ -233,7 +246,8 @@ workspace $wrk3 output $mon1 # Set editor to open on main mon always
 # assign [class="^Spotify"] $wrk10, doesn't work thiw spotify : https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace $wrk10
 assign [class="discord"] $wrk9
-assign [class="looking-glass-client"] $wrk8
+assign [class="looking-glass-client"] 8
+assign [class="Pavucontrol"] $wrk10
 
 # Autorun
 exec_always --no-startup-id compton
@@ -242,9 +256,9 @@ exec_always "setxkbmap -layout gb"
 exec_always "feh --bg-scale $HOME/.wallpapers/arch_wp_combined.png"
 
 # Exec once
-#exec "xrandr --output DVI-I-1 --mode 1920x1080 --rate 144"
 exec "$HOME/scripts/util/dual_144hz.sh"
 exec --no-startup-id spotify
+exec --no-startup-id "pavucontrol -t 0"
 exec --no-startup-id discord
 exec --no-startup-id "ckb --background"
 # exec --no-startup-id google-chrome-stable --new-window https://discordapp.com/channels/326031025870340097/326031025870340097

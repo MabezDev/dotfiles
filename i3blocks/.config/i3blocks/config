@@ -108,6 +108,12 @@ interval=1
 min_width=100.00%
 #separator=false
 
+[temperature]
+label=
+command=/usr/libexec/i3blocks/temperature --chip k10temp-pci-00c3
+interval=1
+min_width=80.00%
+
 #[load_average]
 #interval=10
 
@@ -124,7 +130,7 @@ min_width=100.00%
 #
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
-interval=5
+interval=1
 
 # Generic media player support
 #
@@ -147,8 +153,9 @@ interval=5
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 #[temperature]
-#label=TEMP
-#interval=10
+#label=
+#command=/usr/libexec/i3blocks/temperature --chip k10temp-pci-00c3
+#interval=1
 
 # Key indicators
 #

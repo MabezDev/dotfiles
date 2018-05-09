@@ -7,14 +7,20 @@ bindkey "^[Oc" forward-word
 
 export EDITOR=vim
 
-#export TERM=konsole
+export TERM=linux
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/home/mabez/programs/xtensa-esp32-elf/bin
+export PATH=$PATH:$HOME/programs/xtensa-esp32-elf/bin
+# node
+export PATH=$PATH:$HOME/programs/node-v8.11.1-linux-x64/bin
 export PATH=/usr/share/bcc/tools:$PATH
-export IDF_PATH=/home/mabez/programs/esp-idf
+export IDF_PATH=$HOME/programs/esp-idf
+export PATH=$PATH:$HOME/.cargo/bin
 # temp while gentoo stlink is broke
-#export PATH=$PATH:$HOME/programs/stlink/build/Release
+export PATH=$PATH:$HOME/programs/stlink/build/Release
+
+export API_TOKEN=Ee8-1XZnrL_8XtjYMyaJ
+
 #export PATH=$PATH:$HOME/programs/arm-gcc/gcc-arm-none-eabi-6-2017-q2-update/bin
 #export PATH=$PATH:/opt/cudnn6
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
