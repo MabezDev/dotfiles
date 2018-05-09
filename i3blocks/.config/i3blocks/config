@@ -26,6 +26,7 @@
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/libexec/i3blocks/$BLOCK_NAME
 separator_block_width=15
+separator=false
 markup=none
 
 ## Media
@@ -52,7 +53,6 @@ signal=2
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 label=
-separator=true
 interval=30
 
 #[memory]

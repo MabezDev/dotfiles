@@ -16,7 +16,8 @@ set $mod Mod4
 # font pango:Spacemono 12
 #font pango:IBM Plex Mono 12
 # font pango:Avenir 12
-font pango:Fira Mono 12
+# font pango:Fira Mono 12
+font pango:DejaVu Sans Mono 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -202,8 +203,8 @@ bindsym $mod+Shift+less move workspace to output left
 
 set $primary #b48ead
 set $invert #2b303b
-# set $invert_faded #2b303b
-set $invert_outline #3f4656
+set $invert_faded #2b303b6F
+set $invert_outline #4f5970
 set $text #ffffff
 
 client.focused          $primary $primary #ffffff $primary $primary
@@ -215,14 +216,18 @@ client.urgent           #8e8e79 #8e8e79 #ffffff #900000   #900000
 # finds out, if available)
 bar {
         position top
+        separator_symbol "■"
         colors {
+
                 # class                    # border        #bg      # text  # indicator # child-border
-                background                 $invert
-                focused_workspace          $invert_outline $primary $text #2e9ef4   #28557p
-                active_workspace           $invert         $invert  $text #484e50   #5f676a
-                inactive_workspace         $invert_outline $invert  $text #292d2e   #222222
-                urgent_workspace           #8e8e79         #8e8e79  $text #900000   #900000
+                background                 $invert_faded
+                focused_workspace          $invert_outline $invert  $text 
+                active_workspace           $invert         $invert  $invert_outline 
+                inactive_workspace         $invert_outline $invert  $invert_outline 
+                urgent_workspace           #8e8e79         $primary  $invert
+                statusline $text
         }
+        height 28
         i3bar_command i3bar -t
         status_command i3blocks
 }
@@ -232,7 +237,7 @@ bar {
 gaps inner 20
 gaps outer 5
 
-smart_gaps on
+# smart_gaps on
 
 new_window pixel 0
 
@@ -266,8 +271,7 @@ assign [class="Pavucontrol"] $wrk10
 # Autorun
 exec_always --no-startup-id compton
 exec_always "setxkbmap -layout gb"
-#exec_always "feh --bg-scale $HOME/.wallpapers/wp_arch_blue.jpg"
-exec_always "feh --bg-scale $HOME/.wallpapers/arch_wp_combined.png"
+exec_always "feh --bg-scale $HOME/.wallpapers/bled.jpg"
 
 # Exec once
 exec "$HOME/scripts/util/dual_144hz.sh"
