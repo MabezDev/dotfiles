@@ -13,7 +13,10 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Spacemono 12
+# font pango:Spacemono 12
+#font pango:IBM Plex Mono 12
+# font pango:Avenir 12
+font pango:Fira Mono 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -201,6 +204,7 @@ set $primary #b48ead
 set $invert #2b303b
 # set $invert_faded #2b303b
 set $invert_outline #3f4656
+set $text #ffffff
 
 client.focused          $primary $primary #ffffff $primary $primary
 client.focused_inactive $invert $invert #ffffff $invert $invert
@@ -212,11 +216,12 @@ client.urgent           #8e8e79 #8e8e79 #ffffff #900000   #900000
 bar {
         position top
         colors {
+                # class                    # border        #bg      # text  # indicator # child-border
                 background                 $invert
-                focused_workspace          $invert_outline $primary #ffffff #2e9ef4   #28557p
-                active_workspace           $invert $invert #ffffff #484e50   #5f676a
-                inactive_workspace         $invert_outline $invert #ffffff #292d2e   #222222
-                urgent_workspace           #8e8e79 #8e8e79 #ffffff #900000   #900000
+                focused_workspace          $invert_outline $primary $text #2e9ef4   #28557p
+                active_workspace           $invert         $invert  $text #484e50   #5f676a
+                inactive_workspace         $invert_outline $invert  $text #292d2e   #222222
+                urgent_workspace           #8e8e79         #8e8e79  $text #900000   #900000
         }
         i3bar_command i3bar -t
         status_command i3blocks

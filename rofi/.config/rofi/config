@@ -1,16 +1,6 @@
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! Copyright: Rasmus Steinke
-! ------------------------------------------------------------------------------
-! Use extended color scheme
-rofi.color-enabled:                  true
-! Color scheme for normal row
-rofi.color-normal:                   argb:a02f1e2e, #b4b4b4, argb:a02f1e2e, argb:54815ba4, #ffffff
-! Color scheme for urgent row
-rofi.color-urgent:                   argb:272f1e2e, #ef6155, argb:2f2f1e2e, argb:54815ba4, #ef6155
-! Color scheme for active row
-rofi.color-active:                   argb:272f1e2e, #815ba4, argb:2f2f1e2e, argb:54815ba4, #815ba4
-! Color scheme window
-rofi.color-window:                   #2f1e2e, argb:36ef6155, argb:2fef6155
-! Separator style (none, dash, solid)
-rofi.separator-style:                dash
+
+rofi.color-enabled: true
+rofi.color-window: argb:fc2f343f, argb:fc2f343f, argb:fc2f343f
+rofi.color-normal: argb:002f343f, #d8dee8, argb:002f343f, argb:002f343f, #bf616a
+rofi.color-active: #2f343f, #b48ead, #2f343f, #2f343f, #93e5cc
+rofi.color-urgent: #2f343f, #ebcb8b, #2f343f, #2f343f, #ebcb8b
