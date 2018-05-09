@@ -227,8 +227,8 @@ new_window pixel 0
 
 set $mode_power [l]ogoff | [s]hutdown
 mode "$mode_power" {
-	bindsym l exec i3-msg exit
-        bindsym s exec $HOME/.config/i3/scripts/shutdown
+	bindsym l exec --no-startup-id i3-msg exit, mode "default"
+        bindsym s exec --no-startup-id $HOME/.config/i3/scripts/shutdown, mode "default"
 	bindsym Return mode "default"
         bindsym Escape mode "default"
 }
