@@ -93,13 +93,21 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $wrk1 "1:  Terminals"
-set $wrk2 "2:  Browsing"
-set $wrk3 "3:  Editor"
-set $wrk4 "4:  Virtulization"
-set $wrk5 "5:  Media"
-set $wrk9 "9:  IM"
-set $wrk10 "10:  Music"
+# set $wrk1 " Terminals"
+# set $wrk2 " Browsing"
+# set $wrk3 " Editor"
+# set $wrk4 " Virtulization"
+# set $wrk5 " Media"
+# set $wrk9 " IM"
+# set $wrk10 " Music"
+
+set $wrk1 ""
+set $wrk2 ""
+set $wrk3 ""
+set $wrk4 ""
+set $wrk5 ""
+set $wrk9 ""
+set $wrk10 ""
 
 
 # switch to workspace
@@ -185,16 +193,34 @@ bindsym $mod+Shift+less move workspace to output left
 # i3lock
 #bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/customlock.sh
 
-#set $purple #4a2c5b
-#set $faded #2a1c33
-set $purple #34bcbc
-set $faded #3c5572
-set $bar_bg #3c557226
+# set $primary #34bcbc
+# set $invert #3c5572
+# set $invert_faded #3c557226 # #3c5572 - 26, color then alpha
 
-client.focused          $purple $purple #ffffff $purple $purple
-client.focused_inactive $faded $faded #ffffff $faded $faded
-client.unfocused        $faded $faded #edeff2 $faded $faded
+set $primary #b48ead
+set $invert #2b303b
+# set $invert_faded #2b303b
+set $invert_outline #3f4656
+
+client.focused          $primary $primary #ffffff $primary $primary
+client.focused_inactive $invert $invert #ffffff $invert $invert
+client.unfocused        $invert $invert #edeff2 $invert $invert
 client.urgent           #8e8e79 #8e8e79 #ffffff #900000   #900000
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        position top
+        colors {
+                background                 $invert
+                focused_workspace          $invert_outline $primary #ffffff #2e9ef4   #28557p
+                active_workspace           $invert $invert #ffffff #484e50   #5f676a
+                inactive_workspace         $invert_outline $invert #ffffff #292d2e   #222222
+                urgent_workspace           #8e8e79 #8e8e79 #ffffff #900000   #900000
+        }
+        i3bar_command i3bar -t
+        status_command i3blocks
+}
 
 # gaps stuff
 
@@ -202,23 +228,6 @@ gaps inner 20
 gaps outer 5
 
 smart_gaps on
-
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        position top
-	colors {
-                background $bar_bg
-		focused_workspace          $purple $purple #ffffff #2e9ef4   #28557p
-		active_workspace $faded $faded #ffffff #484e50   #5f676a
-		inactive_workspace        $faded $faded #ffffff #292d2e   #222222
-		urgent_workspace           #8e8e79 #8e8e79 #ffffff #900000   #900000
-	}
-	i3bar_command i3bar -t
-        status_command i3blocks
-}
-
 
 new_window pixel 0
 
