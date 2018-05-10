@@ -1,14 +1,7 @@
-Xft.dpi: 96
-Xft.antialias: true
-Xft.hinting: true
-Xft.rgba: rgb
-Xft.autohint: false
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
-
-
 URxvt.scrollBar: false
-URxvt.background: #282828
+URxvt.depth: 32
+!URxvt.background: rgba:002b/0030/003b/c800
+URxvt.background: [93]#2b303b
 urxvt*foreground: #d0d0d0
 urxvt*cursorColor: #d0d0d0
 urxvt*color0: #101010
@@ -27,13 +20,12 @@ urxvt*color12: #5f5fee
 urxvt*color13: #bb88dd
 urxvt*color14: #4eb4fa
 urxvt*color15: #d0d0d0
-! urxvt.font: Spacemono
-! URxvt*font: xft:Space Mono:pixelsize=12:antialias=true:hinting=true
-! urxvt*font: xft:Spacemono
-URxvt.font: xft:Space Mono:size=16,\
+!URxvt.font: xft:Space Mono:size=16,
+URxvt.font: xft:IBM Plex Mono:size=16,\
             xft:DejaVu Sans:size=16,\
             xft:FontAwesome:size=16
-URxvt.boldFont: xft:Space Mono:size=16,\
+URxvt.boldFont: xft:IBM Plex Mono:size=16,\
        	    xft:DejaVu Sans:size=16,\
        	    xft:FontAwesome:size=16
 URxvt.letterSpace: 0
+

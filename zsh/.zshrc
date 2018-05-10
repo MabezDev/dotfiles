@@ -21,6 +21,9 @@ export PATH=$PATH:$HOME/programs/stlink/build/Release
 
 export API_TOKEN=Ee8-1XZnrL_8XtjYMyaJ
 
+# Font cripsness
+export FT2_SUBPIXEL_HINTING=1
+
 #export PATH=$PATH:$HOME/programs/arm-gcc/gcc-arm-none-eabi-6-2017-q2-update/bin
 #export PATH=$PATH:/opt/cudnn6
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
