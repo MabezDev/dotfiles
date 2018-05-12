@@ -105,13 +105,13 @@ bindsym $mod+a focus parent
 # set $wrk9 " IM"
 # set $wrk10 " Music"
 
-set $wrk1 ""
-set $wrk2 ""
-set $wrk3 ""
-set $wrk4 ""
-set $wrk5 ""
-set $wrk9 ""
-set $wrk10 ""
+set $wrk1 "1:"
+set $wrk2 "2:"
+set $wrk3 "3:"
+set $wrk4 "4:"
+set $wrk5 "5:"
+set $wrk9 "9:"
+set $wrk10 "10:"
 
 
 # switch to workspace
@@ -180,10 +180,10 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #d
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
 
 # Media Controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-# bindcode 164 exec playerctl play
-# bindcode 164 exec playerctl pause
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+# This code is my kb PLay-Pause toggle, found with xmodmap -xpe & xev
+bindcode 172 exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
@@ -218,6 +218,8 @@ client.urgent           #8e8e79 #8e8e79 #ffffff #900000   #900000
 bar {
         position top
         separator_symbol "■"
+	strip_workspace_numbers yes
+	tray_output none
         colors {
 
                 # class                    # border        #bg      # text  # indicator # child-border
@@ -238,7 +240,7 @@ bar {
 gaps inner 20
 gaps outer 5
 
-# smart_gaps on
+smart_gaps on
 
 new_window pixel 0
 
