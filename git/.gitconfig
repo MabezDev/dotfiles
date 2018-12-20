@@ -1,5 +1,7 @@
 [user]
-	name = Scott
+	name = Scott Mabin
 	email = MabezDev@gmail.com
 [push]
 	default = current
+[credential]
+	helper = /home/mabez/programs/libsecret-cred/git-credential-libsecret

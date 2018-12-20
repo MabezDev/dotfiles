@@ -27,7 +27,7 @@
 command=/usr/libexec/i3blocks/$BLOCK_NAME
 separator_block_width=15
 separator=false
-markup=none
+#markup=none
 
 ## Media
 [mediaplayer]
@@ -47,6 +47,12 @@ instance=Master
 #instance=PCM
 interval=once
 signal=2
+
+[headphones]
+label=
+instance=WH-1000XM2 70:26:05:89:9F:28
+command=$HOME/.config/i3blocks/blocks/bt-mgr
+interval=2
 
 # Memory usage
 #
@@ -71,15 +77,15 @@ label=/ 
 instance=/
 interval=30
 
-[disk]
-label=/vms 
-instance=/vms
-interval=30
+#[disk]
+#label=/vms 
+#instance=/vms
+#interval=30
 
-[disk]
-label=/home 
-instance=/home/mabez
-interval=30
+#[disk]
+#label=/home 
+#instance=/home/mabez
+#interval=30
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
@@ -129,7 +135,7 @@ min_width=80.00%
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %H:%M:%S'
+command=date '+%d-%m-%Y %H:%M:%S'
 interval=1
 
 # Generic media player support

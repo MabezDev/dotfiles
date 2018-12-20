@@ -41,7 +41,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec (rofi -show run -terminal urxvt -lines 5)
+bindsym $mod+d exec zsh -c "source $HOME/.zshrc &&  rofi -show run -terminal urxvt -lines 5"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -110,6 +110,7 @@ set $wrk2 "2:"
 set $wrk3 "3:"
 set $wrk4 "4:"
 set $wrk5 "5:"
+set $wrk8 "8:"
 set $wrk9 "9:"
 set $wrk10 "10:"
 
@@ -122,7 +123,7 @@ bindsym $mod+4 workspace $wrk4
 bindsym $mod+5 workspace $wrk5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
+bindsym $mod+8 workspace $wrk8
 bindsym $mod+9 workspace $wrk9
 bindsym $mod+0 workspace $wrk10
 
@@ -134,7 +135,7 @@ bindsym $mod+Shift+4 move container to workspace $wrk4
 bindsym $mod+Shift+5 move container to workspace $wrk5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+8 move container to workspace $wrk8
 bindsym $mod+Shift+9 move container to workspace $wrk9
 bindsym $mod+Shift+0 move container to workspace $wrk10
 
@@ -180,10 +181,10 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #d
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
 
 # Media Controls
-#bindsym XF86AudioPlay exec playerctl play
-#bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
 # This code is my kb PLay-Pause toggle, found with xmodmap -xpe & xev
-bindcode 172 exec playerctl play-pause
+#bindcode 172 exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
@@ -192,7 +193,7 @@ bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
 # Open Ranger
-#bindsym $mod+Shift+f exec konsole -e ranger
+bindsym $mod+Shift+f exec urxvt -e ranger
 
 # i3lock
 #bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/customlock.sh
@@ -205,7 +206,7 @@ set $primary #b48ead
 set $invert #2b303b
 set $invert_faded #2b303bCF
 set $invert_outline #4f5970
-set $text #ffffff
+set $text #d3b6ce
 set $alert #8e8e79
 
 client.focused          $primary $primary #ffffff $primary $primary
@@ -213,13 +214,16 @@ client.focused_inactive $invert $invert #ffffff $invert $invert
 client.unfocused        $invert $invert #edeff2 $invert $invert
 client.urgent           #8e8e79 #8e8e79 #ffffff #900000   #900000
 
+set $mon1 DVI-0
+set $mon2 DisplayPort-0
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         position top
         separator_symbol "■"
 	strip_workspace_numbers yes
-	tray_output none
+	tray_output $mon2
         colors {
 
                 # class                    # border        #bg      # text  # indicator # child-border
@@ -256,8 +260,10 @@ mode "$mode_power" {
 }
 bindsym $mod+Shift+o  mode "$mode_power"
 
-set $mon1 DVI-0
-set $mon2 DisplayPort-0
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+
 # Assign workspaces to monitors
 # workspace $workspace1 output [Monitor COnnection]
 workspace $wrk9 output $mon2
@@ -268,18 +274,21 @@ workspace $wrk3 output $mon1 # Set editor to open on main mon always
 # assign [class="^Spotify"] $wrk10, doesn't work thiw spotify : https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace $wrk10
 assign [class="discord"] $wrk9
-assign [class="looking-glass-client"] 8
+assign [class="looking-glass-client"] 7
 assign [class="Pavucontrol"] $wrk10
+for_window [class="Station"] move to workspace $wrk8
 
 # Autorun
 exec_always --no-startup-id compton
 exec_always "setxkbmap -layout gb"
 exec_always "feh --bg-scale $HOME/.wallpapers/bled.jpg"
+exec_always "pactl set-source-output-volume 10 100%"
+exec --no-startup-id "udiskie -Ant2 &"
 
-# Exec once
-exec "$HOME/scripts/util/dual_144hz.sh"
+# exec once
+exec --no-startup-id "$HOME/scripts/util/dual_144hz.sh"
 exec --no-startup-id spotify
 exec --no-startup-id "pavucontrol -t 0"
 exec --no-startup-id discord
 exec --no-startup-id "ckb --background"
-# exec --no-startup-id google-chrome-stable --new-window https://discordapp.com/channels/326031025870340097/326031025870340097
+exec --no-startup-id "/home/mabez/programs/station/station"
