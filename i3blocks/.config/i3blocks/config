@@ -35,6 +35,12 @@ label=
 interval=1
 
 
+[wifi]
+label=
+instance=wlp2s0
+interval=10
+separator=false
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
@@ -95,10 +101,6 @@ interval=30
 #color=#00FF00
 #interval=10
 #separator=true
-#[wifi]
-#instance=wlp3s0
-#interval=10
-#separator=false
 
 #[bandwidth]
 #instance=eth0
