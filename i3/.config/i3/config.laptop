@@ -24,3 +24,8 @@ bar {
         i3bar_command i3bar -t
         status_command i3blocks
 }
+
+# 
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 10%+ $update  #increase sound volume
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #decrease sound volume
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
