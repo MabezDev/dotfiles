@@ -118,7 +118,7 @@ min_width=100.00%
 
 [temperature]
 label=
-command=/usr/libexec/i3blocks/temperature --chip k10temp-pci-00c3
+command=/usr/libexec/i3blocks/temperature
 interval=1
 min_width=80.00%
 
@@ -128,11 +128,11 @@ min_width=80.00%
 # Battery indicator
 #
 # The battery instance defaults to 0.
-#[battery]
-#label=BAT
-#label=⚡
-#instance=1
-#interval=30
+[battery]
+label=BAT
+label=⚡
+instance=0
+interval=30
 
 # Date Time
 #

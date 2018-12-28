@@ -1,0 +1,33 @@
+[keyring]
+display-name=Default keyring
+ctime=1546030832
+mtime=0
+lock-on-idle=false
+lock-after=false
+
+[1]
+item-type=1
+display-name=Git: https://github.com/
+secret=20fc0cb5fe141785afa013420a710d417d71c8b5
+mtime=1546030839
+ctime=1546030832
+
+[1:attribute0]
+name=protocol
+type=string
+value=https
+
+[1:attribute1]
+name=server
+type=string
+value=github.com
+
+[1:attribute2]
+name=user
+type=string
+value=mabezdev
+
+[1:attribute3]
+name=xdg:schema
+type=string
+value=org.gnome.keyring.NetworkPassword
