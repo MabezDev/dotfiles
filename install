@@ -1,5 +1,20 @@
 #!/bin/bash
 
-# merge i3 config with current
+i3_path="i3/.config/i3/"
+
+# merge i3 config with chosen
+cat $i3_path/config.base > $i3_path/config
+
+if [[ "$1" == "desktop" ]]; then
+	echo "Deploying desktop configuration"
+	cat $i3_path/config.desktop >> $i3_path/config
+elif [[ "$1" == "laptop" ]]; then
+	echo "Deploying desktop configuration"
+	cat $i3_path/config.laptop >> $i3_path/config
+else
+	echo "Missing deploy type, either desktop or laptop"
+	exit 1
+fi
+
 
 find . -maxdepth 1 -name "[!.]*" -type d -exec bash -c 'stow -R $(basename "$0")' {} \;
