@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# merge i3 config with current
+
+find . -maxdepth 1 -name "[!.]*" -type d -exec bash -c 'stow -D $(basename "$0")' {} \;
