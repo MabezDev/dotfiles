@@ -237,7 +237,7 @@ for_window [class="Station"] move to workspace $wrk8
 # Autorun
 exec_always --no-startup-id compton
 exec_always "setxkbmap -layout gb"
-exec_always "feh --bg-scale $HOME/.wallpapers/bled.jpg"
+exec_always "feh --bg-scale $HOME/.wallpapers/spacetoon.png"
 exec_always "pactl set-source-output-volume 10 100%"
 
 # exec once
