@@ -64,9 +64,10 @@ modules-center = playerctl
 modules-right = bluetooth filesystem xbacklight alsa memory cpu wlan eth battery temperature date powermenu
 
 tray-position = ${env:TRAY_POS}
-;tray-position = right
-tray-padding = 2
 tray-transparent = true
+tray-maxsize = 20
+;tray-position = right
+;tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -113,7 +114,8 @@ click-middle = playerctl play-pause
 
 [module/bluetooth]
 type = custom/script
-label = " %output%"
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/scripts/bluetooth.sh status WH-1000XM2
 interval = 3
 click-left = ~/.config/polybar/scripts/bluetooth.sh connect WH-1000XM2
