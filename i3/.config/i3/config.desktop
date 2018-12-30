@@ -1,4 +1,6 @@
-
+#
+#   Following code injected from config.desktop
+#
 
 # This code is my kb PLay-Pause toggle, found with xmodmap -xpe & xev
 # bindcode 172 exec playerctl play-pause

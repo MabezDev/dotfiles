@@ -55,15 +55,18 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = i3
 modules-center = playerctl
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = bluetooth filesystem xbacklight alsa memory cpu wlan eth battery temperature date powermenu
 
 tray-position = ${env:TRAY_POS}
 ;tray-position = right
 tray-padding = 2
-;tray-transparent = true
+tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -107,6 +110,14 @@ interval = 1
 click-left = playerctl previous
 click-right = playerctl next
 click-middle = playerctl play-pause
+
+[module/bluetooth]
+type = custom/script
+label = " %output%"
+exec = ~/.config/polybar/scripts/bluetooth.sh status WH-1000XM2
+interval = 3
+click-left = ~/.config/polybar/scripts/bluetooth.sh connect WH-1000XM2
+click-right = ~/.config/polybar/scripts/bluetooth.sh disconnect WH-1000XM2
 
 [module/filesystem]
 type = internal/fs
@@ -217,7 +228,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 # format-underline = #f90000
 label = %percentage:2%%
@@ -225,7 +236,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 # format-underline = #4bffdc
 label = %percentage_used%%
@@ -284,33 +295,33 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 label = %date% %time%
 
-;[module/pulseaudio]
-;type = internal/pulseaudio
-;
-;; <bar-volume>
-;format-volume = <label-volume>
-;label-volume = ♪ %percentage%%
-;label-volume-foreground = ${root.foreground}
-;
-;label-muted = 🔇 muted
-;label-muted-foreground = #666
-;
-;bar-volume-width = 10
-;bar-volume-foreground-0 = #55aa55
-;bar-volume-foreground-1 = #55aa55
-;bar-volume-foreground-2 = #55aa55
-;bar-volume-foreground-3 = #55aa55
-;bar-volume-foreground-4 = #55aa55
-;bar-volume-foreground-5 = #f5a70a
-;bar-volume-foreground-6 = #ff5555
-;bar-volume-gradient = false
-;bar-volume-indicator = |
-;bar-volume-indicator-font = 2
-;bar-volume-fill = ─
-;bar-volume-fill-font = 2
-;bar-volume-empty = ─
-;bar-volume-empty-font = 2
-;bar-volume-empty-foreground = ${colors.foreground-alt}
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; <bar-volume>
+format-volume = <label-volume>
+label-volume = ♪ %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
 type = internal/alsa
@@ -377,9 +388,11 @@ animation-discharging-framerate = 750
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
+hwmon-path = /sys/class/hwmon/hwmon1/temp1_input
 
 format = <ramp> <label>
-format-underline = #f50a4d
+; #f50a4d
+format-underline = #00000000
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
