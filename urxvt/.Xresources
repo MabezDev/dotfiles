@@ -28,4 +28,5 @@ URxvt.boldFont: xft:IBM Plex Mono:size=16,\
        	    xft:DejaVu Sans:size=16,\
        	    xft:FontAwesome:size=16
 URxvt.letterSpace: 0
-
+Xcursor.theme: Breeze-Obsidian
+Xcursor.size: 16

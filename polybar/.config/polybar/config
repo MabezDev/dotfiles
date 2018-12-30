@@ -60,13 +60,14 @@ modules-left = i3
 modules-center = playerctl
 modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
-tray-position = right
+tray-position = ${env:TRAY_POS}
+;tray-position = right
 tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
@@ -145,7 +146,7 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 pin-workspaces = true
-
+override-redirect = true
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
@@ -253,7 +254,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = vnet0
+interface = enp6s0
 interval = 3.0
 
 # format-connected-underline = #55aa55
