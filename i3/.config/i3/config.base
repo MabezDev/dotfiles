@@ -234,17 +234,18 @@ assign [class="looking-glass-client"] 7
 assign [class="Pavucontrol"] $wrk10
 for_window [class="Station"] move to workspace $wrk8
 
-# Autorun
-exec_always --no-startup-id compton
-exec_always "setxkbmap -layout gb"
-exec_always "feh --bg-scale $HOME/.wallpapers/bled.jpg"
-exec_always "pactl set-source-output-volume 10 100%"
-
 # exec once
 exec --no-startup-id "udiskie -Ant2 &"
+exec --no-startup-id "xrdb ~/.Xresources"
 exec --no-startup-id "$HOME/scripts/util/dual_144hz.sh"
 exec --no-startup-id spotify
 exec --no-startup-id "pavucontrol -t 0"
 exec --no-startup-id discord
 exec --no-startup-id "ckb --background"
 exec --no-startup-id "/home/mabez/programs/station/station"
+
+# Autorun
+exec_always --no-startup-id compton
+exec_always --no-startup-id "setxkbmap -layout gb"
+exec_always --no-startup-id "feh --bg-scale $HOME/.wallpapers/spacetoon.png"
+exec_always --no-startup-id "pactl set-source-output-volume 10 100%"

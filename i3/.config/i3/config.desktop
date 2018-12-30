@@ -1,32 +1,36 @@
-
+#
+#   Following code injected from config.desktop
+#
 
 # This code is my kb PLay-Pause toggle, found with xmodmap -xpe & xev
 # bindcode 172 exec playerctl play-pause
 
-set $mon1 DVI-0
-set $mon2 DisplayPort-0
+#set $mon1 DVI-0
+#set $mon2 DisplayPort-0
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        position top
-        separator_symbol "■"
-        strip_workspace_numbers yes
-        tray_output $mon2
-        colors {
+#bar {
+#        position top
+#        separator_symbol "■"
+#        strip_workspace_numbers yes
+#        tray_output $mon2
+#        colors {
+#
+#                # class                    # border        #bg      # text  # indicator # child-border
+#                background                 $invert_faded
+#                focused_workspace          $primary $primary  $invert 
+#                active_workspace           $invert_outline $invert  $invert_outline 
+#                inactive_workspace         $invert_outline $invert  $invert_outline 
+#                urgent_workspace           $alert         $alert  $invert
+#                statusline $text
+#        }
+#        height 28
+#        i3bar_command i3bar -t
+#        status_command i3blocks
+#}
 
-                # class                    # border        #bg      # text  # indicator # child-border
-                background                 $invert_faded
-                focused_workspace          $primary $primary  $invert 
-                active_workspace           $invert_outline $invert  $invert_outline 
-                inactive_workspace         $invert_outline $invert  $invert_outline 
-                urgent_workspace           $alert         $alert  $invert
-                statusline $text
-        }
-        height 28
-        i3bar_command i3bar -t
-        status_command i3blocks
-}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Assign workspaces to monitors
 # workspace $workspace1 output [Monitor COnnection]

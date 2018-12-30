@@ -1,4 +1,6 @@
-
+#
+#   Following code injected from config.desktop
+#
 
 set $mon1 primary
 set $mon2 primary
