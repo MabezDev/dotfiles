@@ -9,7 +9,7 @@ if [[ "$1" == "desktop" ]]; then
 	echo "Deploying desktop configuration"
 	cat $i3_path/config.desktop >> $i3_path/config
 elif [[ "$1" == "laptop" ]]; then
-	echo "Deploying desktop configuration"
+	echo "Deploying laptop configuration"
 	cat $i3_path/config.laptop >> $i3_path/config
 else
 	echo "Missing deploy type, either desktop or laptop"
