@@ -61,7 +61,7 @@ font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = i3
 modules-center = playerctl
-modules-right = bluetooth filesystem xbacklight alsa memory cpu wlan eth battery temperature date powermenu
+modules-right = bluetooth filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
 
 tray-position = ${env:TRAY_POS}
 tray-transparent = true

@@ -30,8 +30,6 @@
 #        status_command i3blocks
 #}
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 # Assign workspaces to monitors
 # workspace $workspace1 output [Monitor COnnection]
 workspace $wrk9 output $mon2
