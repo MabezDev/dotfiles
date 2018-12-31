@@ -245,6 +245,7 @@ exec --no-startup-id "ckb --background"
 exec --no-startup-id "/home/mabez/programs/station/station"
 
 # Autorun
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton
 exec_always --no-startup-id "setxkbmap -layout gb"
 exec_always --no-startup-id "feh --bg-scale $HOME/.wallpapers/spacetoon.png"
