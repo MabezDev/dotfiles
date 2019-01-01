@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 VMS_RUNNING=$(virsh -c qemu:///system list --name | wc -l)
 
@@ -14,7 +14,7 @@ echo $1
 
 case "$1" in
     lock)
-        notify-send "Locking" "Implement this ya dummie" --icon=dialog-warning
+        i3lock
         ;;
     reboot)
 		pre_script $1
