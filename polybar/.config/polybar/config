@@ -53,7 +53,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
@@ -61,7 +61,7 @@ font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = i3
 modules-center = playerctl
-modules-right = bluetooth filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = bluetooth filesystem xbacklight pulseaudio memory cpu wlan eth_laptop eth battery temperature date powermenu
 
 tray-position = ${env:TRAY_POS}
 ;tray-position = right
@@ -207,7 +207,7 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label = ""
 
 bar-width = 10
 bar-indicator = |
@@ -243,7 +243,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -256,16 +256,22 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
 interface = enp6s0
+interval = 3.0
+
+[module/eth_laptop]
+type = internal/network
+interface = enp1s0
 interval = 3.0
 
 # format-connected-underline = #55aa55
@@ -386,9 +392,12 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-hwmon-path = /sys/class/hwmon/hwmon1/temp1_input
+; laptop thermal zon
+thermal-zone = 2
+warn-temperature = 70
+hwmon-path-0 = /sys/class/hwmon/hwmon1/temp1_input
+;hwmon-path-1 = /sys/class/hwmon/hwmon0/temp1_input
+
 
 format = <ramp> <label>
 ; #f50a4d
