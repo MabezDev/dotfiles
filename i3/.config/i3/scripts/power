@@ -14,7 +14,7 @@ echo $1
 
 case "$1" in
     lock)
-        i3lock
+        $HOME/.config/i3/scripts/customlock.sh
         ;;
     reboot)
 		pre_script $1

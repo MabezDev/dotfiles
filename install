@@ -1,7 +1,7 @@
 #!/bin/bash
 
 i3_path="i3/.config/i3/"
-zsh_path="zsh/"
+zsh_path="zsh/.zsh_conf"
 
 # merge i3 config with chosen
 cat $i3_path/config.base > $i3_path/config
@@ -9,11 +9,11 @@ cat $i3_path/config.base > $i3_path/config
 if [[ "$1" == "desktop" ]]; then
 	echo "Deploying desktop configuration"
 	cat $i3_path/config.desktop >> $i3_path/config
-	cat $zsh_path/zshenv.desktop > $zsh_path/.zshenv
+	cat $zsh_path/zshenv.desktop > zsh/.zshenv
 elif [[ "$1" == "laptop" ]]; then
 	echo "Deploying laptop configuration"
 	cat $i3_path/config.laptop >> $i3_path/config
-	cat $zsh_path/zshenv.laptop > $zsh_path/.zshenv
+	cat $zsh_path/zshenv.laptop > zsh/.zshenv
 else
 	echo "Missing deploy type, either desktop or laptop"
 	exit 1

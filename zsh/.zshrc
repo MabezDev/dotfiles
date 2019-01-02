@@ -9,38 +9,13 @@ export EDITOR=vim
 export TERM=linux
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
-
-export PATH=$PATH:$HOME/programs/xtensa-esp32-elf/bin
-# node
-export PATH=$PATH:$HOME/programs/node-v8.11.1-linux-x64/bin
-export PATH=/usr/share/bcc/tools:$PATH
-export PATH=$PATH:$HOME/programs/station
-export IDF_PATH=$HOME/programs/esp-idf
 export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/programs/idea-IU-182.3684.101/bin
-
-#export PATH=$PATH:$HOME/programs/go/bin
-#export GOROOT=$HOME/programs/go
-export GOPATH=$HOME/.go
-
-# temp while gentoo stlink is broke
-export PATH=$PATH:$HOME/programs/stlink/build/Release
-
-export API_TOKEN=Ee8-1XZnrL_8XtjYMyaJ
 
 # Font cripsness
 export FT2_SUBPIXEL_HINTING=1
 
-#export PATH=$PATH:$HOME/programs/arm-gcc/gcc-arm-none-eabi-6-2017-q2-update/bin
-#export PATH=$PATH:/opt/cudnn6
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/cuda/lib64
-#export CUDA_HOME=/opt/cuda/
-
 export LIBVIRT_DEFAULT_URI="qemu:///system"
-#export QEMU_AUDIO_DRV=alsa
-#export QEMU_PA_SERVER=/run/user/1000/pulse/native
-#export QEMU_PA_SINK=alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo
-#export QEMU_PA_SOURCE=input
+
 
 # Alias
 alias mterm="python -m serial.tools.miniterm"
