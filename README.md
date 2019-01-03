@@ -22,3 +22,7 @@ then set an autolock for 5minutes of afk, finally launch i3 with a consolekit se
 
 `/etc/acpid/handler.sh` will handle all acpi events, find the button/lid case and append your lock code before `zzz` is invoked.
 
+## Capturing font unicode points from the raw values
+
+`echo -ne "\ue9b1" | xclip -selection clipboard` replacing `e9b1` with the 4 character hex code of your symbol. This puts the symbol in you clipboard ready for pasting into a config.
+
