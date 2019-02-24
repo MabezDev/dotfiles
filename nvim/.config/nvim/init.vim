@@ -29,6 +29,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 
+" Nerd tree for projects
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
@@ -48,3 +50,44 @@ inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+" Linter
+let g:ale_sign_column_always = 1
+" only lint on save
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_enter = 0
+let g:ale_rust_cargo_use_check = 1
+let g:ale_rust_cargo_check_all_targets = 1
+let g:ale_virtualtext_cursor = 0
+
+" rls setting for rust
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['env', 'rls'],
+    \ }
+let g:LanguageClient_autoStart = 1
+
+
+
+" use netrw like nerd tree for basic project exploration : https://shapeshed.com/vim-netrw/
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 6 
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
+
+
+
+" editor settings
+
+" enable mouse support
+set mouse=a
+
+" yank to clipboard
+set clipboard=unnamedplus
+
+" show or hide nerdtree with c-b
+map <C-b> :NERDTreeToggle<CR>

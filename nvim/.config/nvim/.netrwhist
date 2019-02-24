@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/mabez/development/rust/embedded/projects/mabez-watch-rust/src'
+let g:netrw_dirhist_2='/home/mabez/development/rust/embedded/projects/mabez-watch-rust/src/ingress'
+let g:netrw_dirhist_3='/home/mabez/development/rust/embedded/projects/mabez-watch-rust/src'
+let g:netrw_dirhist_4='/home/mabez/development/rust/embedded/projects/mabez-watch-rust/src/application'
+let g:netrw_dirhist_5='/home/mabez/development/rust/embedded/projects/mabez-watch-rust/src/application/states'
+let g:netrw_dirhist_6='/home/mabez/development/rust/embedded/projects/mabez-watch-rust/src'
+let g:netrw_dirhist_7='/home/mabez/development/rust/embedded/projects/mabez-watch-rust/src/ingress'
+let g:netrw_dirhist_8='/home/mabez/.dotfiles/nvim/.config/nvim'
