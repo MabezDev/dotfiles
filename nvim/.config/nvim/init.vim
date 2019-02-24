@@ -1,6 +1,6 @@
-set number
+""" Mabezdev nvim config
 
-"plug#begin('~/.local/share/nvim/plugged')
+
 call plug#begin()
 
 " Fuzzy search/find
@@ -27,6 +27,7 @@ Plug 'roxma/nvim-yarp'
 " Syntactic language support
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
+Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 " Nerd tree for projects
@@ -79,9 +80,40 @@ let g:LanguageClient_autoStart = 1
 "  autocmd VimEnter * :Vexplore
 "augroup END
 
+" nerdtree
 
+" close vim if nerdtree is the last window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" when opening a folder, open nerdtree automatically
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" show hidden files in nt
+let NERDTreeShowHidden=1
+
+" MD
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
 
 " editor settings
+
+" unbind the arrow keyes when in command mode to force myself to use hjlk
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" Ctrl+c and Ctrl+j as Esc
+inoremap <C-j> <Esc>
+vnoremap <C-j> <Esc>
+inoremap <C-c> <Esc>
+vnoremap <C-c> <Esc>
+
+" numbering system
+set number
 
 " enable mouse support
 set mouse=a
@@ -91,3 +123,7 @@ set clipboard=unnamedplus
 
 " show or hide nerdtree with c-b
 map <C-b> :NERDTreeToggle<CR>
+
+
+" file type detection 
+autocmd BufRead *.md set filetype=markdown
