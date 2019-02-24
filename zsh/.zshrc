@@ -5,7 +5,7 @@
 bindkey "^[Od" backward-word
 bindkey "^[Oc" forward-word
 
-export EDITOR=vim
+export EDITOR=nvim
 # only required for urvtx
 # export TERM=linux
 export PATH=$PATH:/sbin
