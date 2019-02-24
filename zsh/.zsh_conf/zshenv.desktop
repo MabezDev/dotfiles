@@ -3,7 +3,6 @@ export PATH=$PATH:$HOME/programs/xtensa-esp32-elf/bin
 export PATH=/usr/share/bcc/tools:$PATH
 export PATH=$PATH:$HOME/programs/station
 export PATH=$PATH:$HOME/programs/idea-IU-182.3684.101/bin
-export PATH=$PATH:$HOME/programs/shells/bin/
 
 export IDF_PATH=$HOME/programs/esp-idf
 export GOPATH=$HOME/.go
