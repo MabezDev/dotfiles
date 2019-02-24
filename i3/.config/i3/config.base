@@ -34,7 +34,8 @@ font pango:IBM Plex Mono 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+#bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec /home/mabez/programs/shells/bin/alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill

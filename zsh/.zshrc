@@ -6,7 +6,8 @@ bindkey "^[Od" backward-word
 bindkey "^[Oc" forward-word
 
 export EDITOR=vim
-export TERM=linux
+# only required for urvtx
+# export TERM=linux
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/.cargo/bin
@@ -124,3 +125,5 @@ compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
 
 #neofetch
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
