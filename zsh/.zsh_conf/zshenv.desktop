@@ -6,3 +6,6 @@ export PATH=$PATH:$HOME/programs/idea-IU-182.3684.101/bin
 
 export IDF_PATH=$HOME/programs/esp-idf
 export GOPATH=$HOME/.go
+
+alias vim="nvim"
+alias vi="nvim"

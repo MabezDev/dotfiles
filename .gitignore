@@ -7,3 +7,4 @@ i3/.config/i3/config
 cursors/.icons/xorg-x11
 zsh/.zshenv
 nvim/.config/nvim/plugged
+nvim/.config/nvim/vimdid

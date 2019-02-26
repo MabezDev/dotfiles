@@ -1,5 +1,6 @@
 """ Mabezdev nvim config
 
+let mapleader = "\<Space>" " set the leader key to space
 
 call plug#begin()
 
@@ -33,8 +34,24 @@ Plug 'plasticboy/vim-markdown'
 " Nerd tree for projects
 Plug 'scrooloose/nerdtree'
 
+" color schemes
+Plug 'patstockwell/vim-monokai-tasty'
+
+" light line for status
+Plug 'itchyny/lightline.vim'
+
 call plug#end()
 
+" rg support
+if executable('rg')
+	set grepprg=rg\ --no-heading\ --vimgrep
+	set grepformat=%f:%l:%c:%m
+endif
+
+
+" Permanent undo
+set undodir=~/.config/nvim/vimdid
+set undofile
 
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
@@ -98,7 +115,13 @@ let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
 
+" open a file in the project
+map <C-p> :Files<CR>
+
 " editor settings
+
+" get syntax 
+syntax on
 
 " unbind the arrow keyes when in command mode to force myself to use hjlk
 noremap <Up> <Nop>
@@ -112,9 +135,6 @@ vnoremap <C-j> <Esc>
 inoremap <C-c> <Esc>
 vnoremap <C-c> <Esc>
 
-" numbering system
-set number
-
 " enable mouse support
 set mouse=a
 
@@ -127,3 +147,35 @@ map <C-b> :NERDTreeToggle<CR>
 
 " file type detection 
 autocmd BufRead *.md set filetype=markdown
+
+" Proper search
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
+
+" <leader><leader> toggles between buffers
+nnoremap <leader><leader> <c-^>
+
+" Jump to next/previous error
+nnoremap <C-j> :cnext<cr>
+nnoremap <C-k> :cprev<cr>
+
+""" GUI Settings
+
+set ttyfast
+set showcmd " Show (partial) command in status line.
+"color scheme
+colorscheme vim-monokai-tasty
+" numbering system
+set number
+
+" <leader>s for Rg search
+noremap <leader>s :Rg
+let g:fzf_layout = { 'down': '~20%' }
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
