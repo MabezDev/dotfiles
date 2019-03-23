@@ -66,7 +66,7 @@ font-3 = "mabez:style=Regular:pixelsize=10;1"
 
 modules-left = i3
 modules-center = playerctl
-modules-right = bluetooth xbacklight pulseaudio temperature temperature_laptop cpu memory wlan eth eth_laptop battery date
+modules-right = keyboard headset xbacklight pulseaudio temperature temperature_laptop cpu memory wlan eth eth_laptop battery date
 ;powermenu
 ;filesystem
 
@@ -119,7 +119,7 @@ click-left = playerctl previous
 click-right = playerctl next
 click-middle = playerctl play-pause
 
-[module/bluetooth]
+[module/headset]
 type = custom/script
 # format-prefix = " "
 # format-prefix = " "
@@ -129,6 +129,17 @@ exec = ~/.config/polybar/scripts/bluetooth.sh status WH-1000XM2
 interval = 3
 click-left = ~/.config/polybar/scripts/bluetooth.sh connect WH-1000XM2
 click-right = ~/.config/polybar/scripts/bluetooth.sh disconnect WH-1000XM2
+
+[module/keyboard]
+type = custom/script
+# format-prefix = " "
+# format-prefix = " "
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground-alt}
+exec = ~/.config/polybar/scripts/bluetooth.sh status ANNE_KB_L1_E6AC
+interval = 3
+click-left = ~/.config/polybar/scripts/bluetooth.sh connect ANNE_KB_L1_E6AC
+click-right = ~/.config/polybar/scripts/bluetooth.sh disconnect ANNE_KB_L1_E6AC
 
 [module/filesystem]
 type = internal/fs
