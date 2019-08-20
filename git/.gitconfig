@@ -4,4 +4,4 @@
 [push]
 	default = current
 [credential]
-	helper = /home/mabez/programs/libsecret-cred/git-credential-libsecret
+	helper = /usr/lib/git-core/git-credential-libsecret
