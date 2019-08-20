@@ -7,5 +7,7 @@ export PATH=$PATH:$HOME/programs/idea-IU-182.3684.101/bin
 export IDF_PATH=$HOME/programs/esp-idf
 export GOPATH=$HOME/.go
 
+export PATH=$PATH:$HOME/programs/gcc-arm-none-eabi-8-2019-q3-update/bin
+
 alias vim="nvim"
 alias vi="nvim"

@@ -47,6 +47,8 @@ bindsym $mod+d exec zsh -c "rofi -show run -terminal urxvt -lines 5"
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+bindsym $mod+Tab workspace back_and_forth
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -186,7 +188,7 @@ bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
 # Open Ranger
-bindsym $mod+Shift+f exec urxvt -e ranger
+bindsym $mod+Shift+f exec exec zsh -c "alacritty -e ranger"
 
 # i3lock
 #bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/customlock.sh

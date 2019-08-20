@@ -13,6 +13,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
+Plug 'w0rp/ale'
 
 "Semantic language support
 Plug 'phildawes/racer'
@@ -39,6 +40,9 @@ Plug 'patstockwell/vim-monokai-tasty'
 
 " light line for status
 Plug 'itchyny/lightline.vim'
+
+" gdb support
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -103,8 +107,8 @@ let g:LanguageClient_autoStart = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " when opening a folder, open nerdtree automatically
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 " show hidden files in nt
 let NERDTreeShowHidden=1
@@ -160,6 +164,10 @@ nnoremap <leader><leader> <c-^>
 " Jump to next/previous error
 nnoremap <C-j> :cnext<cr>
 nnoremap <C-k> :cprev<cr>
+
+" lang server stuff
+nnoremap <silent> K :ALEHover<CR>
+nnoremap <silent> gd :ALEGoToDefinition<CR>
 
 """ GUI Settings
 

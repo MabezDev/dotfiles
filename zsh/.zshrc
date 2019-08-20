@@ -8,6 +8,10 @@ bindkey "^[Oc" forward-word
 export EDITOR=nvim
 # only required for urvtx
 # export TERM=linux
+
+# for ranger
+export TERMCMD='alacritty'
+
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/.cargo/bin
