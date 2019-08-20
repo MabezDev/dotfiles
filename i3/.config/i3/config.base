@@ -246,6 +246,8 @@ exec --no-startup-id "pavucontrol -t 0"
 exec --no-startup-id discord
 exec --no-startup-id "ckb --background"
 exec --no-startup-id "/home/mabez/programs/station/station"
+exec --no-startup-id /usr/bin/dunst
+exec --no-startup-id nm-applet
 
 # Autorun
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

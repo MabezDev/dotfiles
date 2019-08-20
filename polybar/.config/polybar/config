@@ -319,8 +319,8 @@ label-muted-foreground = #666
 
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = ADP1
+battery = BAT1
+adapter = ACAD
 full-at = 100
 
 format-charging = <animation-charging> <label-charging>
