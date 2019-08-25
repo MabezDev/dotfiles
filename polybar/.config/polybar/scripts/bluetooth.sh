@@ -3,16 +3,13 @@
 CMD=$1
 NAME=$2
 DEFAULT_CONTROLLER="00:1A:7D:DA:71:07"
-MAC=$(echo -e 'paired-devices' | bluetoothctl | grep "Device" | grep "WH-1000XM2" | cut -d" " -f2)
-# NAME="WH-1000XM2"
-# MAC=$2
-# echo "#1"
+MAC=$(echo -e 'paired-devices' | bluetoothctl | grep "Device" | grep $NAME | cut -d" " -f2)
 
 if [[ "$CMD" == "status" ]]; then
-    if [[ $(echo -e 'info' | bluetoothctl | grep "Name: " | cut -d" " -f2) == *"$NAME"* ]]; then
-        echo "ON"
-    else
+    if [[ $(echo -e "info $MAC" | bluetoothctl | grep "Connected: " | cut -d" " -f2) == "no" ]]; then
         echo "OFF"
+    else
+        echo "ON"
     fi
 elif [[ "$CMD" == "connect" ]]; then
     if [[ $(echo -e 'info' | bluetoothctl) != *"$NAME"* ]]; then
