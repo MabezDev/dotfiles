@@ -8,6 +8,8 @@ export IDF_PATH=$HOME/programs/esp-idf
 export GOPATH=$HOME/.go
 
 export PATH=$PATH:$HOME/programs/gcc-arm-none-eabi-8-2019-q3-update/bin
+export PATH=$PATH:$HOME/programs/node-v10.16.3-linux-x64/bin
 
+alias esptool=$HOME/programs/esp-idf/components/esptool_py/esptool/esptool.py
 alias vim="nvim"
 alias vi="nvim"
