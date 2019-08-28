@@ -5,6 +5,11 @@ NAME=$2
 DEFAULT_CONTROLLER="00:1A:7D:DA:71:07"
 MAC=$(echo -e 'paired-devices' | bluetoothctl | grep "Device" | grep $NAME | cut -d" " -f2)
 
+if [[ -z "$MAC" ]]; then
+    echo "MISS"
+    exit 1
+fi
+
 if [[ "$CMD" == "status" ]]; then
     if [[ $(echo -e "info $MAC" | bluetoothctl | grep "Connected: " | cut -d" " -f2) == "yes" ]]; then
         echo "ON"

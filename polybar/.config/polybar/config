@@ -14,6 +14,7 @@
 ;
 ;   The README contains alot of information
 ;
+;
 ;==========================================================
 
 [colors]
@@ -125,6 +126,8 @@ type = custom/script
 # format-prefix = " "
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
+# status will return exit code 1, if the device is not paired!
+exec-if = ~/.config/polybar/scripts/bluetooth.sh status WH-1000XM2
 exec = ~/.config/polybar/scripts/bluetooth.sh status WH-1000XM2
 interval = 3
 click-left = ~/.config/polybar/scripts/bluetooth.sh connect WH-1000XM2
@@ -136,6 +139,7 @@ type = custom/script
 # format-prefix = " "
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
+exec-if = ~/.config/polybar/scripts/bluetooth.sh status ANNE_KB_L1_E6AC
 exec = ~/.config/polybar/scripts/bluetooth.sh status ANNE_KB_L1_E6AC
 interval = 3
 click-left = ~/.config/polybar/scripts/bluetooth.sh connect ANNE_KB_L1_E6AC
