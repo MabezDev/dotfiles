@@ -14,10 +14,9 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Semantic language support
-Plug 'phildawes/racer'
-Plug 'racer-rust/vim-racer'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -82,11 +81,7 @@ let g:ale_rust_cargo_use_check = 1
 let g:ale_rust_cargo_check_all_targets = 1
 let g:ale_virtualtext_cursor = 0
 
-" rls setting for rust
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['env', 'rls'],
-    \ }
-let g:LanguageClient_autoStart = 1
+"let g:LanguageClient_autoStart = 1
 
 
 
@@ -166,8 +161,24 @@ nnoremap <C-j> :cnext<cr>
 nnoremap <C-k> :cprev<cr>
 
 " lang server stuff
-nnoremap <silent> K :ALEHover<CR>
-nnoremap <silent> gd :ALEGoToDefinition<CR>
+"nnoremap <silent> K :ALEHover<CR>
+"nnoremap <silent> gd :ALEGoToDefinition<CR>
+nmap <silent> E <Plug>(coc-diagnostic-prev)
+nmap <silent> W <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 
 """ GUI Settings
 

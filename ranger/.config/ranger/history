@@ -1,0 +1,9 @@
+open_with 
+visual-studio-code . -n
+shell visual-studio-code . -n
+search id
+shell identify %s
+search stl
+shell feh %s
+search med
+search xl

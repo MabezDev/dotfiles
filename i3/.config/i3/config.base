@@ -188,7 +188,7 @@ bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
 # Open Ranger
-bindsym $mod+Shift+f exec exec zsh -c "alacritty -e ranger"
+bindsym $mod+Shift+f exec zsh -c "env EDITOR=nvim alacritty -e /usr/bin/ranger"
 
 # i3lock
 #bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/customlock.sh
@@ -207,7 +207,7 @@ client.urgent           #8e8e79 #8e8e79 #ffffff #900000   #900000
 
 # gaps stuff
 
-gaps inner 20
+gaps inner 10
 gaps outer 5
 
 smart_gaps on
@@ -251,5 +251,5 @@ exec --no-startup-id "/home/mabez/programs/station/station"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton
 exec_always --no-startup-id "setxkbmap -layout gb"
-exec_always --no-startup-id "feh --bg-scale $HOME/.wallpapers/spacetoon.png"
+exec_always --no-startup-id "feh --bg-scale $HOME/.wallpapers/alena-aenami-aenami-lunar.jpg"
 exec_always --no-startup-id "pactl set-source-output-volume 10 100%"
