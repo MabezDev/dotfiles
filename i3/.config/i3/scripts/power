@@ -19,14 +19,12 @@ case "$1" in
     reboot)
 		pre_script $1
 		notify-send "Rebooting..." "Bye Bye" --icon=dialog-warning
-        dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" \
-        /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
+		loginctl reboot
         ;;
     shutdown)
 		pre_script $1
 		notify-send "Shutting down..." "Bye Bye" --icon=dialog-warning
-        dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" \
-        /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
+		loginctl poweroff
         ;;
     *)
         echo "Usage: $0 {lock|reboot|shutdown}"

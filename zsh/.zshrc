@@ -10,7 +10,9 @@ export EDITOR=nvim
 # export TERM=linux
 
 # for ranger
-export TERMCMD='alacritty'
+#export TERMCMD='alacritty'
+
+export TERM=xterm-256color ssh
 
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
