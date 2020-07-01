@@ -17,6 +17,7 @@ export TERM=xterm-256color ssh
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # Font cripsness
 export FT2_SUBPIXEL_HINTING=1
