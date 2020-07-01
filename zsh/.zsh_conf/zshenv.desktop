@@ -9,7 +9,6 @@ export PATH=$PATH:$HOME/programs/gcc-arm-none-eabi-8-2019-q3-update/bin
 export PATH=$PATH:$HOME/programs/node-v10.16.3-linux-x64/bin
 export PATH=$PATH:$HOME/programs/zola
 export PATH=$PATH:$HOME/programs/JLink_Linux_V648b_x86_64
-export PATH=$PATH:$HOME/.local/bin
 
 alias vim="nvim"
 alias vi="nvim"
