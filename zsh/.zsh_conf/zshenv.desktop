@@ -2,8 +2,6 @@
 export PATH=$PATH:$HOME/programs/xtensa-esp32-elf/bin
 export PATH=/usr/share/bcc/tools:$PATH
 export PATH=$PATH:$HOME/programs/station
-export PATH=$PATH:$HOME/programs/idea-IU-182.3684.101/bin
-
 export IDF_PATH=$HOME/programs/esp-idf
 export GOPATH=$HOME/.go
 
@@ -13,6 +11,5 @@ export PATH=$PATH:$HOME/programs/zola
 export PATH=$PATH:$HOME/programs/JLink_Linux_V648b_x86_64
 export PATH=$PATH:$HOME/.local/bin
 
-alias esptool=$HOME/programs/esp-idf/components/esptool_py/esptool/esptool.py
 alias vim="nvim"
 alias vi="nvim"
