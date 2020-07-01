@@ -10,8 +10,8 @@ Install deps and run `git clone --recursive .dotfiles` in home directory. Then r
 
 ```
 xrdb merge $HOME/.Xresources   
-/usr/bin/i3lock -e -u -i /home/mabez/.config/i3/icons/screen_lock_boot.png
-/usr/bin/xautolock -detectsleep -time 5 -locker '/home/mabez/.config/i3/scripts/customlock.sh' &
+/usr/bin/i3lock -e -u -i $HOME/.config/i3/icons/screen_lock_boot.png
+/usr/bin/xautolock -detectsleep -time 5 -locker '$HOME/.config/i3/scripts/customlock.sh' &
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session i3
 ```
 
