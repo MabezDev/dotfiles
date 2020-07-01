@@ -1,5 +1,5 @@
 #
-#   Following code injected from config.desktop
+#   Following code injected from laptop.desktop
 #
 
 set $mon1 primary
@@ -31,3 +31,6 @@ set $mon2 primary
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 10%+ $update  #increase sound volume
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #decrease sound volume
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
+
+# laptop autorun
+exec_always --no-startup-id "connmanctl enable bluetooth"

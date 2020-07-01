@@ -3,3 +3,6 @@ alias i3lock='/home/mabez/.config/i3/scripts/customlock.sh'
 alias discord='Discord'
 alias vim='nvim'
 export WINIT_HIDPI_FACTOR=1.0
+
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/programs/esp/xtensa-esp32-elf/bin
