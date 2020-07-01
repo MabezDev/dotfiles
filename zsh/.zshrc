@@ -123,6 +123,10 @@ source $HOME/.zshplugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*:sudo::' environ PATH="/sbin:/usr/sbin:$PATH" HOME="/root"
 
+# wal theming
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
+
 autoload -U compinit 
 #promptinit
 compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION

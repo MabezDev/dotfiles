@@ -36,6 +36,7 @@ Plug 'scrooloose/nerdtree'
 
 " color schemes
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'dylanaraps/wal.vim'
 
 " light line for status
 Plug 'itchyny/lightline.vim'
@@ -184,8 +185,8 @@ endfunction
 
 set ttyfast
 set showcmd " Show (partial) command in status line.
-"color scheme
-colorscheme vim-monokai-tasty
+"color scheme, old: vim-monokai-tasty
+colorscheme wal
 " numbering system
 set number
 

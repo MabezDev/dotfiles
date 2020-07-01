@@ -188,10 +188,22 @@ bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
 # Open Ranger
-bindsym $mod+Shift+f exec zsh -c "env EDITOR=nvim alacritty -e /usr/bin/ranger"
+bindsym $mod+Shift+f exec alacritty -e "$HOME/.config/i3/scripts/ranger.sh"
 
 # i3lock
 #bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/customlock.sh
+
+# full screen shot (all monitors) (in the future: https://github.com/naelstrof/maim/issues/103)
+bindsym --release Print exec "maim | tee /tmp/$(date +%s).png | xclip -selection clipboard -t image/png"
+# bindsym --release Print exec "scrot /tmp/$(date --iso-8601='seconds').png -m -e 'xclip -selection c -t image/png < $f'"
+
+# selection
+bindsym --release Shift+Print exec "maim -i $(xdotool getactivewindow) | tee /tmp/$(date +%s).png | xclip -selection clipboard -t image/png"
+# bindsym --release Shift+Print exec "scrot /tmp/$(date --iso-8601='seconds').png -s -e 'xclip -selection c -t image/png < $f'"
+
+# current window
+bindsym --release $mod+Print exec "maim -s | tee /tmp/$(date +%s).png | xclip -selection clipboard -t image/png"
+# bindsym --release $mod+Print exec "scrot /tmp/$(date --iso-8601='seconds').png -u -e 'xclip -selection c -t image/png < $f'"
 
 set $primary #b48ead
 set $invert #2b303b
@@ -238,18 +250,16 @@ assign [class="Pavucontrol"] $wrk10
 for_window [class="Station"] move to workspace $wrk8
 
 # exec once
-exec --no-startup-id "udiskie -Ant2 &"
+exec --no-startup-id "/home/mabez/.local/bin/wal -R"
 exec --no-startup-id "xrdb ~/.Xresources"
-exec --no-startup-id "$HOME/scripts/util/dual_144hz.sh"
+exec --no-startup-id "udiskie -Ant2 &"
+exec --no-startup-id "ckb --background"
 exec --no-startup-id spotify
 exec --no-startup-id "pavucontrol -t 0"
 exec --no-startup-id discord
-exec --no-startup-id "ckb --background"
-exec --no-startup-id "/home/mabez/programs/station/station"
 
 # Autorun
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton
 exec_always --no-startup-id "setxkbmap -layout gb"
-exec_always --no-startup-id "feh --bg-scale $HOME/.wallpapers/alena-aenami-aenami-lunar.jpg"
 exec_always --no-startup-id "pactl set-source-output-volume 10 100%"
