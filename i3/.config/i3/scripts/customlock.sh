@@ -13,8 +13,8 @@ playerctl pause
 lock=/home/mabez/.config/i3/icons/grey-lock.png
 image_file=/tmp/screen_lock.png
 image_file_final=/tmp/screen_lock_final.png
-rm $image_file
-rm $image_file_final
+rm -f $image_file &> /dev/null
+rm -f $image_file_final &> /dev/null
 
 resolution=$(xdpyinfo | grep dimensions | awk '{print $2}') 
 filters='boxblur=luma_radius=min(h\,w)/w*25'
