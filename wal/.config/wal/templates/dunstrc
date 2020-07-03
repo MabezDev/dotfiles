@@ -21,7 +21,7 @@
     padding = 10
     horizontal_padding = 10
     separator_color = #bfbfbf
-    startup_notification = true
+    startup_notification = false
     show_indicators = no
     dmenu = /usr/bin/rofi -dmenu -p dunst
     browser = /usr/bin/google-chrome -new-tab
