@@ -1,7 +1,7 @@
 [global]
-    font = IBM Plex Mono 11
+    font = IBM Plex Mono 10
     allow_markup = yes
-    format = "%s\n%b"
+    format = "<b>%s</b>\n%b\n%p"
     sort = yes
     indicate_hidden = yes
     alignment = left
@@ -21,12 +21,27 @@
     padding = 10
     horizontal_padding = 10
     separator_color = #bfbfbf
-    startup_notification = false
+    startup_notification = true
     show_indicators = no
-    dmenu = /usr/bin/dmenu -p dunst
+    dmenu = /usr/bin/rofi -dmenu -p dunst
     browser = /usr/bin/google-chrome -new-tab
+    max_icon_size = 32
     icon_position = left
-    icon_folders = /usr/share/icons/Adwaita
+    icon_folders = /usr/share/icons/Adwaita/32x32/status:/usr/share/icons/Adwaita/32x32/devices
+
+    # Defines list of actions for each mouse event
+    # Possible values are:
+    # * none: Don't do anything.
+    # * do_action: If the notification has exactly one action, or one is marked as default,
+    #              invoke it. If there are multiple and no default, open the context menu.
+    # * close_current: Close current notification.
+    # * close_all: Close all notifications.
+    # These values can be strung together for each mouse event, and
+    # will be executed in sequence.
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+    
 
 [frame]
     width = 2
@@ -121,3 +136,5 @@
 #    summary = *twitter.com*
 #    urgency = normal
 #
+
+# [*]
