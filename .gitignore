@@ -8,3 +8,4 @@ cursors/.icons/xorg-x11
 zsh/.zshenv
 nvim/.config/nvim/plugged
 nvim/.config/nvim/vimdid
+dunst/.config/dunst/dunstrc

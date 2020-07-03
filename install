@@ -10,6 +10,7 @@ cat $i3_path/config.base > $i3_path/config
 wal -i $HOME/.wallpapers/island-flow.png
 
 # prepare dunst
+mkdir -p .config/dunst/
 dunst/.config/dunst/wal.sh
 
 if [[ "$1" == "desktop" ]]; then
