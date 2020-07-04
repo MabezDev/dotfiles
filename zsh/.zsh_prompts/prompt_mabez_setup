@@ -1,0 +1,87 @@
+
+
+function prompt_mabez_precmd {
+  # Check for untracked files or updated submodules since vcs_info does not.
+  if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+    branch_format="${_prompt_mabez_colors[6]}%s:(%f${_prompt_mabez_colors[1]}%b%f${_prompt_mabez_colors[6]})%f ${_prompt_mabez_colors[4]}✗%f "
+  else
+    branch_format="${_prompt_mabez_colors[6]}%s:(%f${_prompt_mabez_colors[1]}%b%f${_prompt_mabez_colors[6]})%f %u"
+  fi
+
+  zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
+
+  vcs_info 'prompt'
+
+  if (( $+functions[python-info] )); then
+    python-info
+  fi
+}
+
+function prompt_mabez_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent sp subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
+  autoload -Uz colors && colors
+
+  # Add hook for calling vcs_info before each command.
+  add-zsh-hook precmd prompt_mabez_precmd
+
+  # Tell prezto we can manage this prompt
+  zstyle ':prezto:module:prompt' managed 'yes'
+
+  _prompt_mabez_colors=(
+    "%F{$color1}" # git branch
+    "%F{$color6}" # hostname
+    "%F{$color5}" # user
+    "%F{$color3}" # untracked status
+    "%F{$color6}" # Path
+    "%F{$color4}" # vcs type / dir
+    "%F{red}"     # error (RED)
+  )
+
+  # Formats:
+  #   %b - branchname
+  #   %u - unstagedstr (see below)
+  #   %c - stagedstr (see below)
+  #   %a - action (e.g. rebase-i)
+  #   %R - repository path
+  #   %S - path in the repository
+  local branch_format="${_prompt_mabez_colors[6]}%s:(%f${_prompt_mabez_colors[1]}%b%f${_prompt_mabez_colors[6]})%f %u "
+  local action_format="(${_prompt_mabez_colors[5]}%a%f)"
+  local unstaged_format="${_prompt_mabez_colors[4]}✗%f"
+
+  # Set editor-info parameters.
+  zstyle ':prezto:module:editor:info:keymap:primary' format '$'
+
+  # Set vcs_info parameters.
+  # bzr hg svn extra vcs's
+  zstyle ':vcs_info:*' enable git
+  zstyle ':vcs_info:*:prompt:*' check-for-changes true
+  zstyle ':vcs_info:*:prompt:*' unstagedstr "${unstaged_format}"
+  zstyle ':vcs_info:*:prompt:*' actionformats "${branch_format}${action_format}"
+  zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
+  zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
+
+  # Set python-info parameters.
+  zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
+
+  # Define prompts.
+  PROMPT="${_prompt_mabez_colors[3]}%n%f at ${_prompt_mabez_colors[2]}%m%f %{$reset_color%}%(?.${_prompt_mabez_colors[6]}➜.${_prompt_mabez_colors[7]}➜)%f%{$reset_color%} ${_prompt_mabez_colors[5]}%B%1d%b%f "'${vcs_info_msg_0_}'""'$python_info[virtualenv]%{$reset_color%}'
+  RPROMPT=''
+}
+
+function prompt_mabez_preview {
+  local +h PROMPT=''
+  local +h RPROMPT=''
+  local +h SPROMPT=''
+
+  editor-info 2> /dev/null
+  prompt_preview_theme 'mabez'
+}
+
+prompt_mabez_setup "$@"
+# vim: ft=zsh

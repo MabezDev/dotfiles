@@ -3,6 +3,24 @@
 # Shared env # 
 ##############
 
+# Fix Ctrl+arrow word traversal in urvtx
+bindkey "^[Od" backward-word
+bindkey "^[Oc" forward-word
+
+# only required for urvtx
+# export TERM=linux
+
+# for ranger
+#export TERMCMD='alacritty'
+
+export TERM=xterm-256color ssh
+
+# Font cripsness
+export FT2_SUBPIXEL_HINTING=1
+
+# Alias
+alias mterm="python -m serial.tools.miniterm"
+
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
 export GOPATH=$HOME/.go
