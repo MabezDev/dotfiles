@@ -18,6 +18,6 @@ else
         exit 0
     elif [ -n "${THEMES}" ]
     then
-        /home/mabez/.local/bin/wal -i $WALLPAPERDIR${THEMES} > /dev/null
+        wal -i $WALLPAPERDIR${THEMES} > /dev/null
     fi
 fi

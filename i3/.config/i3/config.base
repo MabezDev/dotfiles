@@ -256,7 +256,7 @@ assign [class="Pavucontrol"] $wrk10
 for_window [class="Station"] move to workspace $wrk8
 
 # exec once
-exec --no-startup-id "/home/mabez/.local/bin/wal -R"
+exec --no-startup-id zsh -c "wal -R"
 exec --no-startup-id "xrdb ~/.Xresources"
 exec --no-startup-id "udiskie -Ant2 &"
 exec --no-startup-id "ckb --background"
