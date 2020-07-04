@@ -1,0 +1,80 @@
+
+
+function prompt_mabez_precmd {
+  # Check for untracked files or updated submodules since vcs_info does not.
+  if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+    branch_format="%{$fg_bold[blue]%}%s:(%{$reset_color%}%{$fg[red]%}%b%{$reset_color%}%{$fg_bold[blue]%})%{$reset_color%} %{$fg[yellow]%}✗ "
+  else
+    branch_format="%{$fg_bold[blue]%}%s:(%{$reset_color%}%{$fg[red]%}%b%{$reset_color%}%{$fg_bold[blue]%})%{$reset_color%} %u"
+  fi
+
+  zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
+
+  vcs_info 'prompt'
+
+  if (( $+functions[python-info] )); then
+    python-info
+  fi
+}
+
+function prompt_mabez_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent sp subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
+  autoload -Uz colors && colors
+
+  # Add hook for calling vcs_info before each command.
+  add-zsh-hook precmd prompt_mabez_precmd
+
+  # Tell prezto we can manage this prompt
+  zstyle ':prezto:module:prompt' managed 'yes'
+
+  # Formats:
+  #   %b - branchname
+  #   %u - unstagedstr (see below)
+  #   %c - stagedstr (see below)
+  #   %a - action (e.g. rebase-i)
+  #   %R - repository path
+  #   %S - path in the repository
+  local branch_format="%{$fg_bold[blue]%}%s:(%{$reset_color%}%{$fg[red]%}%b%{$reset_color%}%{$fg_bold[blue]%})%{$reset_color%} %u"
+  local action_format="(%{$fg[red]%}%a)"
+  local unstaged_format="%{$fg[yellow]%}✗ "
+
+  # Set editor-info parameters.
+  zstyle ':prezto:module:editor:info:keymap:primary' format '$'
+
+  # Set vcs_info parameters.
+  # bzr hg svn extra vcs's
+  zstyle ':vcs_info:*' enable git
+  zstyle ':vcs_info:*:prompt:*' check-for-changes true
+  zstyle ':vcs_info:*:prompt:*' unstagedstr "${unstaged_format}"
+  zstyle ':vcs_info:*:prompt:*' actionformats "${branch_format}${action_format}"
+  zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
+  zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
+
+  # Set python-info parameters.
+  zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
+
+  # if we are logged into from ssh, show that in the prompt
+  [ -n "$SSH_CLIENT" ] && prompt_text=" (SSH) " || prompt_text=""
+
+  # Define prompts.
+  PROMPT="%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[magenta]%}%m%{$reset_color%}%{$fg[magenta]%}$prompt_text%{$reset_color%}%(?.%{$fg_bold[green]%}➜.%{$fg_bold[red]%}➜)%{$reset_color%} %{$fg_bold[cyan]%}%1d%{$reset_color%} "'${vcs_info_msg_0_}'""'$python_info[virtualenv]'
+  RPROMPT=''
+}
+
+function prompt_mabez_preview {
+  local +h PROMPT=''
+  local +h RPROMPT=''
+  local +h SPROMPT=''
+
+  editor-info 2> /dev/null
+  prompt_preview_theme 'mabez'
+}
+
+prompt_mabez_setup "$@"
+# vim: ft=zsh
