@@ -18,6 +18,7 @@ else
         exit 0
     elif [ -n "${THEMES}" ]
     then
-        wal -i $WALLPAPERDIR${THEMES} > /dev/null
+        # reload wal after, to update its theme
+        wal -i $WALLPAPERDIR${THEMES} -o $HOME/.config/dunst/wal.sh > /dev/null
     fi
 fi
