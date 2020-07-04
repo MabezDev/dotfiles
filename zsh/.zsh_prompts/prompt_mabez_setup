@@ -3,9 +3,9 @@
 function prompt_mabez_precmd {
   # Check for untracked files or updated submodules since vcs_info does not.
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    branch_format="${_prompt_mabez_colors[6]}%s:(%f${_prompt_mabez_colors[1]}%b%f${_prompt_mabez_colors[6]})%f ${_prompt_mabez_colors[4]}✗%f "
+    branch_format="%{$fg_bold[blue]%}%s:(%{$reset_color%}%{$fg[red]%}%b%{$reset_color%}%{$fg_bold[blue]%})%{$reset_color%} %{$fg[yellow]%}✗ "
   else
-    branch_format="${_prompt_mabez_colors[6]}%s:(%f${_prompt_mabez_colors[1]}%b%f${_prompt_mabez_colors[6]})%f %u"
+    branch_format="%{$fg_bold[blue]%}%s:(%{$reset_color%}%{$fg[red]%}%b%{$reset_color%}%{$fg_bold[blue]%})%{$reset_color%} %u"
   fi
 
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
@@ -50,7 +50,7 @@ function prompt_mabez_setup {
   #   %a - action (e.g. rebase-i)
   #   %R - repository path
   #   %S - path in the repository
-  local branch_format="${_prompt_mabez_colors[6]}%s:(%f${_prompt_mabez_colors[1]}%b%f${_prompt_mabez_colors[6]})%f %u "
+  local branch_format="%{$fg_bold[blue]%}%s:(%{$reset_color%}%{$fg[red]%}%b%{$reset_color%}%{$fg_bold[blue]%})%{$reset_color%} %u"
   local action_format="(${_prompt_mabez_colors[5]}%a%f)"
   local unstaged_format="${_prompt_mabez_colors[4]}✗%f"
 
@@ -70,7 +70,7 @@ function prompt_mabez_setup {
   zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
 
   # Define prompts.
-  PROMPT="${_prompt_mabez_colors[3]}%n%f at ${_prompt_mabez_colors[2]}%m%f %{$reset_color%}%(?.${_prompt_mabez_colors[6]}➜.${_prompt_mabez_colors[7]}➜)%f%{$reset_color%} ${_prompt_mabez_colors[5]}%B%1d%b%f "'${vcs_info_msg_0_}'""'$python_info[virtualenv]%{$reset_color%}'
+  PROMPT="%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[magenta]%}%m%{$reset_color%} %(?.%{$fg_bold[green]%}➜.%{$fg_bold[red]%}➜)%{$reset_color%} %{$fg_bold[cyan]%}%1d%{$reset_color%} "'${vcs_info_msg_0_}'""'$python_info[virtualenv]'
   RPROMPT=''
 }
 
