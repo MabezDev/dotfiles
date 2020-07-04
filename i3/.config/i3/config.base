@@ -226,6 +226,12 @@ smart_gaps on
 
 new_window pixel 0
 
+# jump to focus window
+focus_on_window_activation focus
+
+# theme switcher (change wallpaper and pywal)
+bindsym $mod+t exec --no-startup-id zsh -c "rofi -show themes:$HOME/.config/rofi/themeswitch.sh"
+
 
 # i3 power
 set $mode_power [l]lock | [s]hutdown | [r]eboot
