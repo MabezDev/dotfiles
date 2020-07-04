@@ -17,6 +17,3 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
 
 export LIBVIRT_DEFAULT_URI="qemu:///system"
-
-alias vim="nvim"
-alias vi="nvim"

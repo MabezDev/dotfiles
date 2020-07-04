@@ -20,6 +20,8 @@ export FT2_SUBPIXEL_HINTING=1
 
 # Alias
 alias mterm="python -m serial.tools.miniterm"
+alias vim="nvim"
+alias vi="nvim"
 
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
