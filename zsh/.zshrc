@@ -5,7 +5,6 @@
 bindkey "^[Od" backward-word
 bindkey "^[Oc" forward-word
 
-export EDITOR=nvim
 # only required for urvtx
 # export TERM=linux
 
@@ -14,16 +13,8 @@ export EDITOR=nvim
 
 export TERM=xterm-256color ssh
 
-export PATH=$PATH:/sbin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/.local/bin
-
 # Font cripsness
 export FT2_SUBPIXEL_HINTING=1
-
-export LIBVIRT_DEFAULT_URI="qemu:///system"
-
 
 # Alias
 alias mterm="python -m serial.tools.miniterm"

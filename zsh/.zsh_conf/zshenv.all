@@ -1,0 +1,10 @@
+
+##############
+# Shared env # 
+##############
+
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin
+export GOPATH=$HOME/.go
+
+export EDITOR=nvim
