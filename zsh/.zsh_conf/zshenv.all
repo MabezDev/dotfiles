@@ -7,11 +7,7 @@
 bindkey "^[Od" backward-word
 bindkey "^[Oc" forward-word
 
-# only required for urvtx
-# export TERM=linux
-
-# for ranger
-#export TERMCMD='alacritty'
+export LOCK_SCREEN_IMAGE="$HOME/.cache/lock_wallpaper.png"
 
 export TERM=xterm-256color ssh
 
