@@ -9,3 +9,4 @@ zsh/.zshenv
 nvim/.config/nvim/plugged
 nvim/.config/nvim/vimdid
 dunst/.config/dunst/dunstrc
+mpv/.config/mpv/watch_later
