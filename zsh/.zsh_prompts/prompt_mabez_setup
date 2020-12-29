@@ -41,7 +41,7 @@ function prompt_mabez_setup {
   #   %R - repository path
   #   %S - path in the repository
   local branch_format="%{$fg_bold[blue]%}%s:(%{$reset_color%}%{$fg[red]%}%b%{$reset_color%}%{$fg_bold[blue]%})%{$reset_color%} %u"
-  local action_format="(%{$fg[red]%}%a)"
+  local action_format="%{$fg_bold[blue]%}(%{$reset_color%}%{$fg[red]%}%a%{$fg_bold[blue]%})%{$reset_color%} "
   local unstaged_format="%{$fg[yellow]%}✗ "
 
   # Set editor-info parameters.

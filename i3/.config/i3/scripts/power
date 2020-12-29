@@ -1,11 +1,16 @@
 #!/bin/zsh
 
 VMS_RUNNING=$(virsh -c qemu:///system list --name | wc -l)
+BACKUP_IN_PROGRESS=$(pgrep borg_backup | wc -l)
 
 
 pre_script() {
 	if [ $VMS_RUNNING -gt 1 ]; then
 	    notify-send "Failed to $1" "Virtual machines are stilling running." --icon=dialog-warning
+	    exit 1
+	fi
+	if [ $BACKUP_IN_PROGRESS -gt 0 ]; then
+	    notify-send "Failed to $1" "Backup is in progress" --icon=dialog-warning
 	    exit 1
 	fi
 }

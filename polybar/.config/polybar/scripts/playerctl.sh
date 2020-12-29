@@ -9,3 +9,8 @@ elif [ "$player_status" = "Paused" ]; then
 else
     echo "Unknown status"
 fi
+
+# handle the on click commands, always targeting spotify
+if [[ ! -z "$1" ]]; then
+    $playerctl $1
+fi

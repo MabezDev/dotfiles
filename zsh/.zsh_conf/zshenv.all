@@ -3,17 +3,8 @@
 # Shared env # 
 ##############
 
-# Fix Ctrl+arrow word traversal in urvtx
-bindkey "^[Od" backward-word
-bindkey "^[Oc" forward-word
-
-# only required for urvtx
-# export TERM=linux
-
-# for ranger
-#export TERMCMD='alacritty'
-
 export TERM=xterm-256color ssh
+export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 # Font cripsness
 export FT2_SUBPIXEL_HINTING=1
@@ -23,8 +14,12 @@ alias mterm="python -m serial.tools.miniterm"
 alias vim="nvim"
 alias vi="nvim"
 
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export GOPATH=$HOME/.go
 
 export EDITOR=nvim
+export VISUAL=nvim
+
+# for alacritty, now required on all because of 4:3 wide lg monitor reporting a weird dpi
+export WINIT_X11_SCALE_FACTOR=1.0
