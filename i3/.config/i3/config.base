@@ -193,11 +193,11 @@ bindsym $mod+Shift+f exec alacritty -e "$HOME/.config/i3/scripts/ranger.sh"
 bindsym --release Print exec "maim | tee /tmp/$(date +%s).png | xclip -selection clipboard -t image/png"
 # bindsym --release Print exec "scrot /tmp/$(date --iso-8601='seconds').png -m -e 'xclip -selection c -t image/png < $f'"
 
-# selection
+# current window
 bindsym --release Shift+Print exec "maim -i $(xdotool getactivewindow) | tee /tmp/$(date +%s).png | xclip -selection clipboard -t image/png"
 # bindsym --release Shift+Print exec "scrot /tmp/$(date --iso-8601='seconds').png -s -e 'xclip -selection c -t image/png < $f'"
 
-# current window
+# selection
 bindsym --release $mod+Print exec "maim -s | tee /tmp/$(date +%s).png | xclip -selection clipboard -t image/png"
 # bindsym --release $mod+Print exec "scrot /tmp/$(date --iso-8601='seconds').png -u -e 'xclip -selection c -t image/png < $f'"
 
@@ -253,8 +253,7 @@ for_window [class="Station"] move to workspace $wrk8
 
 # exec once
 exec --no-startup-id zsh -c "wal -R"
-exec --no-startup-id "xrdb ~/.Xresources"
-exec --no-startup-id "udiskie -Ant2 &"
+exec --no-startup-id "udiskie -Ant &"
 exec --no-startup-id "ckb --background"
 exec --no-startup-id spotify
 exec --no-startup-id "pavucontrol -t 0"
@@ -264,4 +263,3 @@ exec --no-startup-id discord
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton
 exec_always --no-startup-id "setxkbmap -layout gb"
-exec_always --no-startup-id "pactl set-source-output-volume 10 100%"

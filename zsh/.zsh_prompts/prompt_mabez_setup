@@ -41,7 +41,7 @@ function prompt_mabez_setup {
   #   %R - repository path
   #   %S - path in the repository
   local branch_format="%{$fg_bold[blue]%}%s:(%{$reset_color%}%{$fg[red]%}%b%{$reset_color%}%{$fg_bold[blue]%})%{$reset_color%} %u"
-  local action_format="(%{$fg[red]%}%a)"
+  local action_format="%{$fg_bold[blue]%}(%{$reset_color%}%{$fg[red]%}%a%{$fg_bold[blue]%})%{$reset_color%} "
   local unstaged_format="%{$fg[yellow]%}✗ "
 
   # Set editor-info parameters.
@@ -63,7 +63,7 @@ function prompt_mabez_setup {
   [ -n "$SSH_CLIENT" ] && prompt_text=" (SSH) " || prompt_text=""
 
   # Define prompts.
-  PROMPT="%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[magenta]%}%m%{$reset_color%}%{$fg[magenta]%}$prompt_text%{$reset_color%}%(?.%{$fg_bold[green]%}➜.%{$fg_bold[red]%}➜)%{$reset_color%} %{$fg_bold[cyan]%}%1d%{$reset_color%} "'${vcs_info_msg_0_}'""'$python_info[virtualenv]'
+  PROMPT="%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[magenta]%}%m%{$reset_color%}%{$fg[magenta]%}$prompt_text%{$reset_color%} %(?.%{$fg_bold[green]%}➜.%{$fg_bold[red]%}➜)%{$reset_color%} %{$fg_bold[cyan]%}%1d%{$reset_color%} "'${vcs_info_msg_0_}'""'$python_info[virtualenv]'
   RPROMPT=''
 }
 
