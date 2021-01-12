@@ -254,7 +254,6 @@ for_window [class="Station"] move to workspace $wrk8
 # exec once
 exec --no-startup-id zsh -c "wal -R"
 exec --no-startup-id "udiskie -Ant &"
-exec --no-startup-id "ckb --background"
 exec --no-startup-id spotify
 exec --no-startup-id "pavucontrol -t 0"
 exec --no-startup-id discord

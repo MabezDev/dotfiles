@@ -12,11 +12,15 @@ workspace $wrk9 output $mon2
 workspace $wrk10 output $mon2
 workspace $wrk3 output $mon1 # Set editor to open on main mon always
 
+# move focus to the monitors
+bindsym Control+$mod+Left focus output $mon3
+bindsym Control+$mod+Right focus output $mon2
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 10%+ $update  #increase sound volume
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #decrease sound volume
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
 
 exec --no-startup-id "$HOME/scripts/util/dual_144hz.sh"
-
 exec --no-startup-id "/home/mabez/programs/station/station"
+exec --no-startup-id "ckb-next --background"

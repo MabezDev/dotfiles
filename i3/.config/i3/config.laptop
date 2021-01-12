@@ -4,6 +4,7 @@
 
 set $mon1 primary
 set $mon2 primary
+set $mon3 primary
 
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 10%+ $update  #increase sound volume
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #decrease sound volume
