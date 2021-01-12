@@ -21,6 +21,7 @@ if [[ "$CMD" == "status" ]]; then
     fi
 elif [[ "$CMD" == "connect" ]]; then
     if [[ $(echo -e "info $MAC" | bluetoothctl | grep "Connected: " | cut -d" " -f2) == "no" ]]; then
+        # $(echo -e "power on" | bluetoothctl)
         $(echo -e "connect $MAC" | bluetoothctl)
     fi
 elif [[ "$CMD" == "disconnect" ]]; then
