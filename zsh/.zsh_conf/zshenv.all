@@ -3,6 +3,7 @@
 # Shared env # 
 ##############
 
+export LOCK_SCREEN_IMAGE="$HOME/.cache/lock_wallpaper.png"
 export TERM=xterm-256color ssh
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 

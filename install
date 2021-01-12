@@ -3,15 +3,11 @@
 i3_path="i3/.config/i3/"
 zsh_path="zsh/.zsh_conf"
 
-# merge i3 config with chosen
-cat $i3_path/config.base > $i3_path/config
-
-# run wal to generate the colour schemes
-wal -i $HOME/.wallpapers/island-flow.png
-
 # prepare dunst
 mkdir -p .config/dunst/
-dunst/.config/dunst/wal.sh
+
+# merge i3 config with chosen
+cat $i3_path/config.base > $i3_path/config
 
 # check if pretzo is installed, if not, install it now
 [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ] && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -31,7 +27,8 @@ else
 	exit 1
 fi
 
-
 find . -maxdepth 1 -name "[!.]*" -type d -exec bash -c 'stow -R $(basename "$0")' {} \;
+
+$HOME/.config/rofi/themeswitch.sh island-flow.png
 
 i3-msg restart

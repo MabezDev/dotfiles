@@ -19,6 +19,8 @@ else
     elif [ -n "${THEMES}" ]
     then
         # reload wal after, to update its theme
-        wal -i $WALLPAPERDIR${THEMES} -o $HOME/.config/dunst/wal.sh > /dev/null
+        wal -i $WALLPAPERDIR${THEMES} -o $HOME/.config/dunst/wal.sh  > /dev/null
+        # create a new fresh boot lock screen, we do this async so we don't block rofi
+        ($HOME/.config/i3/scripts/bootlock.sh -i $WALLPAPERDIR${THEMES} > /dev/null &)
     fi
 fi
