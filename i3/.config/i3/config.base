@@ -228,6 +228,9 @@ focus_on_window_activation focus
 # theme switcher (change wallpaper and pywal)
 bindsym $mod+t exec --no-startup-id zsh -c "rofi -show themes:$HOME/.config/rofi/themeswitch.sh"
 
+# Display switcher
+bindsym $mod+Shift+d exec --no-startup-id zsh -c "rofi -show mode:$HOME/.config/rofi/displayswitch.sh"
+
 
 # i3 power
 set $mode_power [l]lock | [s]hutdown | [r]eboot
