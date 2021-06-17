@@ -3,8 +3,8 @@
 #
 
 set $mon1 HDMI-A-0
-set $mon2 DisplayPort-0
-set $mon3 DVI-D-0
+set $mon2 DVI-D-0
+set $mon3 DisplayPort-0
 
 # Assign workspaces to monitors
 # workspace $workspace1 output [Monitor COnnection]
