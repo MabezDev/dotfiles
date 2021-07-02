@@ -1,0 +1,27 @@
+[general]
+"git/.gitconfig"   = "~/.gitconfig"
+"nvim/.config/nvim/" = "~/.config/nvim/"
+"alacritty/.config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
+"tmux/.tmux.conf" = "~/.tmux.conf"
+"user-dirs/.config/user-dirs.dirs" = "~/.config/user-dirs.dirs"
+"wallpapers/.wallpapers" = "~/.wallpapers"
+"zsh" = "~/"
+
+
+[darwin]
+vscode = "$APPDATA/Code/User" # TODO correct path
+
+
+[linux]
+vscode = "~/.config/Code/User"
+"alsa/.asoundrc" = "~/.asoundrc"
+"compton/.config/compton.conf" = "~/.config/compton.conf"
+"cursors/.icons" = "~/.icons"
+"dunst/.config/dunst" = "~/.config/dunst"
+"fonts/.fonts" = "~/.fonts"
+"i3/.config/i3" = "~/.config/i3"
+"mpv/.config/mpv" = "~/.config/mpv"
+"polybar/.config/polybar" = "~/.config/polybar"
+"ranger/.config/ranger" = "~/.config/ranger"
+"rofi/.config/rofi" = "~/.config/rofi"
+"wal/.config/wal" = "~/.config/wal"

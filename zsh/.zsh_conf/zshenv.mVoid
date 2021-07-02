@@ -1,6 +1,6 @@
 
 ##############
-# Laptop env # 
+# mVoid env # 
 ##############
 
 alias startx='\/usr/bin/nohup \/usr/bin/startx & exit'

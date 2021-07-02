@@ -1,3 +1,4 @@
 #!/bin/bash
 
+# TODO unlink with `dot`
 find . -maxdepth 1 -name "[!.]*" -type d -exec bash -c 'stow -D $(basename "$0")' {} \;

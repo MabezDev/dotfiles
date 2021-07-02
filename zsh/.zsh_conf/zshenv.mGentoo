@@ -1,6 +1,6 @@
 
 ###############
-# Desktop env # 
+# mGentoo env # 
 ###############
 
 export PATH=$PATH:$HOME/programs/xtensa-esp32-elf/bin
