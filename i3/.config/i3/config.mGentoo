@@ -22,5 +22,4 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #d
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
 
 exec --no-startup-id "$HOME/scripts/util/dual_144hz.sh"
-exec --no-startup-id "/home/mabez/programs/station/station"
 exec --no-startup-id "ckb-next --background"
