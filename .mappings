@@ -1,19 +1,22 @@
 [general]
-"git/.gitconfig"   = "~/.gitconfig"
-"nvim/.config/nvim/" = "~/.config/nvim/"
+"git/.gitconfig" = "~/.gitconfig"
+"nvim/.config/nvim/" = "~/.config/nvim"
 "alacritty/.config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
 "tmux/.tmux.conf" = "~/.tmux.conf"
 "user-dirs/.config/user-dirs.dirs" = "~/.config/user-dirs.dirs"
 "wallpapers/.wallpapers" = "~/.wallpapers"
-"zsh" = "~/"
+"zsh/.zsh_prompts" = "~/.zsh_prompts"
+"zsh/.zpreztorc" = "~/.zpreztorc"
+"zsh/.zshenv" = "~/.zshenv"
+"zsh/.zshrc" = "~/.zshrc"
 
 
 [darwin]
-vscode = "$APPDATA/Code/User" # TODO correct path
+# vscode = "$APPDATA/Code/User" # TODO correct path
 
 
 [linux]
-vscode = "~/.config/Code/User"
+"vscode/settings.json" = "~/.config/Code/User/settings.json"
 "alsa/.asoundrc" = "~/.asoundrc"
 "compton/.config/compton.conf" = "~/.config/compton.conf"
 "cursors/.icons" = "~/.icons"

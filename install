@@ -2,15 +2,10 @@
 
 i3_path="i3/.config/i3/"
 zsh_path="zsh/.zsh_conf"
+dot_path="$HOME/.cargo/bin/dot"
 
 hname=$(hostname)
 os=$(uname -s)
-
-case "${os}" in
-    Linux*)     pre_linux;;
-    Darwin*)    pre_macos;;
-    *)          echo "Unknown OS"; exit 1
-esac
 
 pre_linux() {
 	# prepare dunst
@@ -24,25 +19,27 @@ pre_linux() {
 }
 
 pre_macos() {
+	:
 	# nop
 }
 
+case "${os}" in
+    Linux*)     pre_linux;;
+    Darwin*)    pre_macos;;
+    *)          echo "Unknown OS"; exit 1
+esac
+
 # check if pretzo is installed, if not, install it now
 [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ] && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+# check dot is installed
+[ ! -f "$dot_path" ] && { echo "dot is not installed."; exit 1; }
 
 # configure and install zsh configs
 cat $zsh_path/zshenv.all > zsh/.zshenv
 cat $zsh_path/zshenv.$hname >> zsh/.zshenv
 
-
-# TODO link with `dot` instead!
-# find . -maxdepth 1 -name "[!.]*" -type d -exec bash -c 'stow -R $(basename "$0")' {} \;
-
-case "${os}" in
-    Linux*)     post_linux;;
-    Darwin*)    post_macos;;
-    *)          echo "Unknown OS"; exit 1
-esac
+dot link
 
 post_linux() {
 	$HOME/.config/rofi/themeswitch.sh island-flow.png
@@ -50,5 +47,12 @@ post_linux() {
 }
 
 post_macos() {
-
+	:
 }
+
+case "${os}" in
+    Linux*)     post_linux;;
+    Darwin*)    post_macos;;
+    *)          echo "Unknown OS"; exit 1
+esac
+

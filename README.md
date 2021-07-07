@@ -1,10 +1,21 @@
 # Installation
 
 ## Deps
- - GNU stow
- - oh-my-zsh
+ - [`dot`](https://github.com/ubnt-intrepid/dot)
 
-Install deps and run `git clone --recursive .dotfiles` in home directory. Then run './install {type}' inside of `.dotfiles` where `type` can be `laptop` or `desktop`.
+Install deps and run `git clone .dotfiles` in home directory. Then run './install' inside of `.dotfiles`.
+
+## Per machine configuration
+
+### Per OS
+
+`dot` manages cross os configs - see the `.mappings` TOML file.
+
+### Per device
+
+Some configs, like zshenv, i3 etc support different configs based on there hostname. See `zsh/.zsh_conf/` for an example of differences with mVoid laptop and mGentoo desktop.
+
+# Misc
 
 ## Example xinitrc
 

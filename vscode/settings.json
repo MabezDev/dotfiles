@@ -1,0 +1,29 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Monokai Dark Soda",
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "[Monokai Dark Soda]": {
+            "rules": {
+                "parameter": "#cbafff",
+                "*.constant": "#ffffff",
+                "constParameter": "#ffffff"
+            }
+        }
+    },
+    "editor.showFoldingControls": "always",
+    "editor.fontFamily": "Fira Mono",
+    "editor.fontSize": 15,
+    "window.zoomLevel": 0,
+    "editor.formatOnPaste": true,
+    "files.associations": {
+        "config": "toml",
+        "*.svd": "xml",
+        ".mappings": "toml"
+    },
+    "latex-workshop.message.update.show": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "rust-analyzer.cargo.allFeatures": true,
+    "redhat.telemetry.enabled": false,
+    "rust-analyzer.diagnostics.enableExperimental": false
+}
