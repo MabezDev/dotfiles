@@ -3,7 +3,7 @@
 ## Deps
  - [`dot`](https://github.com/ubnt-intrepid/dot)
 
-Install deps and run `git clone .dotfiles` in home directory. Then run './install' inside of `.dotfiles`.
+Install deps and run `git clone https://github.com/MabezDev/dotfiles .dotfiles` in home directory. Then run './install' inside of `.dotfiles`.
 
 ## Per machine configuration
 
