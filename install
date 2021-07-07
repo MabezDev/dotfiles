@@ -2,33 +2,57 @@
 
 i3_path="i3/.config/i3/"
 zsh_path="zsh/.zsh_conf"
+dot_path="$HOME/.cargo/bin/dot"
 
-# prepare dunst
-mkdir -p .config/dunst/
+hname=$(hostname)
+os=$(uname -s)
 
-# merge i3 config with chosen
-cat $i3_path/config.base > $i3_path/config
+pre_linux() {
+	# prepare dunst
+	mkdir -p .config/dunst/
+
+	# merge i3 config with chosen
+	cat $i3_path/config.base > $i3_path/config
+
+	# append per pc config
+	cat $i3_path/config.$hname >> $i3_path/config
+}
+
+pre_macos() {
+	:
+	# nop
+}
+
+case "${os}" in
+    Linux*)     pre_linux;;
+    Darwin*)    pre_macos;;
+    *)          echo "Unknown OS"; exit 1
+esac
 
 # check if pretzo is installed, if not, install it now
 [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ] && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
-if [[ "$1" == "desktop" ]]; then
-	echo "Deploying desktop configuration"
-	cat $i3_path/config.desktop >> $i3_path/config
-	cat $zsh_path/zshenv.all > zsh/.zshenv
-	cat $zsh_path/zshenv.desktop >> zsh/.zshenv
-elif [[ "$1" == "laptop" ]]; then
-	echo "Deploying laptop configuration"
-	cat $i3_path/config.laptop >> $i3_path/config
-	cat $zsh_path/zshenv.all > zsh/.zshenv
-	cat $zsh_path/zshenv.laptop >> zsh/.zshenv
-else
-	echo "Missing deploy type, either desktop or laptop"
-	exit 1
-fi
+# check dot is installed
+[ ! -f "$dot_path" ] && { echo "dot is not installed."; exit 1; }
 
-find . -maxdepth 1 -name "[!.]*" -type d -exec bash -c 'stow -R $(basename "$0")' {} \;
+# configure and install zsh configs
+cat $zsh_path/zshenv.all > zsh/.zshenv
+cat $zsh_path/zshenv.$hname >> zsh/.zshenv
 
-$HOME/.config/rofi/themeswitch.sh island-flow.png
+dot link
 
-i3-msg restart
+post_linux() {
+	$HOME/.config/rofi/themeswitch.sh island-flow.png
+	i3-msg restart
+}
+
+post_macos() {
+	:
+}
+
+case "${os}" in
+    Linux*)     post_linux;;
+    Darwin*)    post_macos;;
+    *)          echo "Unknown OS"; exit 1
+esac
+

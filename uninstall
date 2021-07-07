@@ -1,3 +1,8 @@
 #!/bin/bash
 
-find . -maxdepth 1 -name "[!.]*" -type d -exec bash -c 'stow -D $(basename "$0")' {} \;
+dot_path="$HOME/.cargo/bin/dot"
+
+# check dot is installed
+[ ! -f "$dot_path" ] && { echo "dot is not installed."; exit 1; }
+
+dot clean
