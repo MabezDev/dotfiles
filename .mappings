@@ -12,7 +12,7 @@
 
 
 [darwin]
-# vscode = "$APPDATA/Code/User" # TODO correct path
+"vscode/settings.json" = "$HOME/Library/Application Support/Code/User/settings.json"
 
 
 [linux]
