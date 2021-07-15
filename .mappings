@@ -28,3 +28,4 @@
 "ranger/.config/ranger" = "~/.config/ranger"
 "rofi/.config/rofi" = "~/.config/rofi"
 "wal/.config/wal" = "~/.config/wal"
+"xresources/.Xresources" = "~/.Xresources"
