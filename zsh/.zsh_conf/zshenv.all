@@ -25,3 +25,5 @@ export VISUAL=nvim
 
 # for alacritty, now required on all because of 4:3 wide lg monitor reporting a weird dpi
 export WINIT_X11_SCALE_FACTOR=1.0
+
+export CARGO_NET_GIT_FETCH_WITH_CLI=true
