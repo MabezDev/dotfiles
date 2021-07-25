@@ -1,3 +1,7 @@
 
+###############
+# mDarwin env # 
+###############
+
 export PATH=$PATH:/Users/mabez/Library/Python/3.8/bin
 export PATH="/opt/homebrew/opt/imagemagick@6/bin:$PATH"
