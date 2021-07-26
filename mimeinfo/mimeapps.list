@@ -1,0 +1,31 @@
+[Added Associations]
+image/jpeg=google-chrome.desktop;
+image/png=google-chrome.desktop;
+video/mp4=google-chrome.desktop;
+text/x-diff=google-chrome.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=google-chrome.desktop;firefox-bin.desktop;
+application/pdf=mupdf.desktop;firefox-bin.desktop;google-chrome.desktop;
+image/pdf=google-chrome.desktop;
+
+[Default Applications]
+image/jpeg=vlc.desktop
+image/png=vlc.desktop
+video/mp4=vlc.desktop
+image/gif=vlc.desktop
+text/plain=vim.desktop
+text/markdown=vim.desktop
+text/x-python=vim.desktop
+inode/mount-point=ranger.desktop
+image/mp4=vlc.desktop
+image/webm=vlc.desktop
+video/webm=vlc.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/tg=telegramdesktop.desktop
+text/csv=vim.desktop
+x-scheme-handler/webcal=google-chrome.desktop
+image/jpg=vlc.desktop
+x-scheme-handler/msteams=teams.desktop

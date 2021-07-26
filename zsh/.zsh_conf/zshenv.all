@@ -5,16 +5,7 @@
 
 export LOCK_SCREEN_IMAGE="$HOME/.cache/lock_wallpaper.png"
 export TERM=xterm-256color ssh
-# export TERMINAL="alacritty -e"
 export LIBVIRT_DEFAULT_URI="qemu:///system"
-
-# Font cripsness
-export FT2_SUBPIXEL_HINTING=1
-
-# Alias
-alias mterm="python -m serial.tools.miniterm"
-alias vim="nvim"
-alias vi="nvim"
 
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
@@ -23,7 +14,9 @@ export GOPATH=$HOME/.go
 export EDITOR=nvim
 export VISUAL=nvim
 
-# for alacritty, now required on all because of 4:3 wide lg monitor reporting a weird dpi
-export WINIT_X11_SCALE_FACTOR=1.0
+# wal theming - whilst this should really be in .zshrc, when launching from $TERM -e for example, zshrc is **not** sourced, hence $TERM -e ranger doesn't show the theme!
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
+source ~/.cache/wal/colors.sh
 
 export CARGO_NET_GIT_FETCH_WITH_CLI=true
