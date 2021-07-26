@@ -14,9 +14,10 @@ export GOPATH=$HOME/.go
 export EDITOR=nvim
 export VISUAL=nvim
 
-# wal theming - whilst this should really be in .zshrc, when launching from $TERM -e for example, zshrc is **not** sourced, hence $TERM -e ranger doesn't show the theme!
-(cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
-source ~/.cache/wal/colors.sh
+alias vim="nvim"
+alias vi="nvim"
+
+# Font cripsness
+export FT2_SUBPIXEL_HINTING=1
 
 export CARGO_NET_GIT_FETCH_WITH_CLI=true

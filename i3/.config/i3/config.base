@@ -183,7 +183,7 @@ bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 
 # Open file manager
-bindsym $mod+Shift+f exec kitty zsh -c "hunter"
+bindsym $mod+Shift+f exec kitty zsh -i -c "hunter"
 
 # i3lock
 #bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/customlock.sh
