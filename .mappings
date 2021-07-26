@@ -1,7 +1,6 @@
 [general]
 "git/.gitconfig" = "~/.gitconfig"
 "nvim/.config/nvim/" = "~/.config/nvim"
-"alacritty/.config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
 "tmux/.tmux.conf" = "~/.tmux.conf"
 "user-dirs/.config/user-dirs.dirs" = "~/.config/user-dirs.dirs"
 "wallpapers/.wallpapers" = "~/.wallpapers"
@@ -16,6 +15,10 @@
 
 
 [linux]
+"alacritty/.config/alacritty/alacritty.yml" = "~/.config/alacritty/alacritty.yml"
+"kitty/kitty.conf" = "~/.config/kitty/kitty.conf"
+"hunter/config" = "~/.config/hunter/config"
+"mimeinfo/mimeapps.list" = "~/.config/mimeapps.list"
 "vscode/settings.json" = "~/.config/Code/User/settings.json"
 "alsa/.asoundrc" = "~/.asoundrc"
 "compton/.config/compton.conf" = "~/.config/compton.conf"
