@@ -2,6 +2,8 @@
 #   Following code injected from config.mVoid
 #
 
+exec --no-startup-id zsh -c "wal -R"
+
 set $mon1 primary
 set $mon2 primary
 set $mon3 primary

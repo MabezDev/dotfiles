@@ -4,7 +4,7 @@
 
 set $mon1 HDMI-A-0
 set $mon2 DVI-D-0
-set $mon3 DisplayPort-0
+set $mon3 DisplayPort-1-1
 
 # Assign workspaces to monitors
 # workspace $workspace1 output [Monitor COnnection]
@@ -21,5 +21,11 @@ bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 10%+ $update  #
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #decrease sound volume
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
 
+
 exec --no-startup-id "$HOME/scripts/util/dual_144hz.sh"
+
+exec --no-startup-id zsh -c "wal -R"
 exec --no-startup-id "ckb-next --background"
+
+exec --no-startup-id "xset dpms 3600 3600 3600"
+exec --no-startup-id "xset s 3600 3600"

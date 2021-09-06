@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-OPTIONS=(linux windows)
+OPTIONS=(linux windows macos)
 SCRIPTS_DIR=/home/mabez/scripts
 
 if [ -z $@ ]
@@ -23,6 +23,9 @@ else
             ;;
             windows)
                 $SCRIPTS_DIR/vfio/libvirt/hooks/utils/monitor-disconnect.sh
+            ;;
+            macos)
+                m27q-kvm > /dev/null
             ;;
             *)
                 exit 0

@@ -219,7 +219,11 @@ gaps outer 5
 
 smart_gaps on
 
+
 new_window pixel 0
+
+# for sway
+# default_border none
 
 # jump to focus window
 focus_on_window_activation focus
@@ -254,7 +258,6 @@ assign [class="Pavucontrol"] $wrk10
 for_window [class="Station"] move to workspace $wrk8
 
 # exec once
-exec --no-startup-id zsh -c "wal -R"
 exec --no-startup-id "udiskie -Ant &"
 exec --no-startup-id spotify
 exec --no-startup-id "pavucontrol -t 0"
@@ -262,4 +265,4 @@ exec --no-startup-id discord
 
 # Autorun
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id compton
+exec_always --no-startup-id "compton"

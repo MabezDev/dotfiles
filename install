@@ -39,7 +39,7 @@ esac
 cat $zsh_path/zshenv.all > zsh/.zshenv
 cat $zsh_path/zshenv.$hname >> zsh/.zshenv
 
-dot link
+$dot_path link
 
 post_linux() {
 	$HOME/.config/rofi/themeswitch.sh island-flow.png
