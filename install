@@ -16,6 +16,9 @@ pre_linux() {
 
 	# append per pc config
 	cat $i3_path/config.$hname >> $i3_path/config
+
+	# append common
+	cat $i3_path/config.common >> $i3_path/config
 }
 
 pre_macos() {
@@ -39,7 +42,7 @@ esac
 cat $zsh_path/zshenv.all > zsh/.zshenv
 cat $zsh_path/zshenv.$hname >> zsh/.zshenv
 
-dot link
+$dot_path link
 
 post_linux() {
 	$HOME/.config/rofi/themeswitch.sh island-flow.png

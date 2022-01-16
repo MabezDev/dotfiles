@@ -1,3 +1,5 @@
+
+
 #
 #   Following code injected from config.mVoid
 #
@@ -9,3 +11,8 @@ set $mon3 primary
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 10%+ $update  #increase sound volume
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #decrease sound volume
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
+
+#
+#   End of injected code from config.mVoid
+#
+

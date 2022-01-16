@@ -1,0 +1,23 @@
+
+
+#
+#   Following code injected from config.common
+#
+
+# exec once
+exec --no-startup-id "udiskie -Ant &"
+exec --no-startup-id spotify
+exec --no-startup-id "pavucontrol -t 0"
+exec --no-startup-id discord
+exec --no-startup-id zsh -c "wal -R"
+
+# Autorun
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id "compton"
+
+
+#
+#   End of injected code from config.common
+#
+
+

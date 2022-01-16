@@ -1,15 +1,17 @@
+
+
 #
 #   Following code injected from config.mGentoo
 #
 
-set $mon1 HDMI-A-0
-set $mon2 DVI-D-0
-set $mon3 DisplayPort-0
+set $mon1 DisplayPort-0
+set $mon2 DisplayPort-1
+set $mon3 DisplayPort-2
 
 # Assign workspaces to monitors
 # workspace $workspace1 output [Monitor COnnection]
-workspace $wrk9 output $mon2
-workspace $wrk10 output $mon2
+workspace $wrk9 output $mon3
+workspace $wrk10 output $mon3
 workspace $wrk3 output $mon1 # Set editor to open on main mon always
 
 # move focus to the monitors
@@ -21,5 +23,16 @@ bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 10%+ $update  #
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 10%- $update #decrease sound volume
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute sound
 
-exec --no-startup-id "$HOME/scripts/util/dual_144hz.sh"
+
+exec --no-startup-id "$HOME/scripts/util/linux-monitors.sh"
+exec --no-startup-id "$HOME/scripts/util/pipewire-mic-filter.sh"
+
 exec --no-startup-id "ckb-next --background"
+
+exec --no-startup-id "xset dpms 3600 3600 3600"
+exec --no-startup-id "xset s 3600 3600"
+
+#
+#   End of injected code from config.mGentoo
+#
+

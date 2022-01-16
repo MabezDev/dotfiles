@@ -7,13 +7,19 @@ export PATH=$PATH:$HOME/programs/xtensa-esp32-elf/bin
 export PATH=$PATH:$HOME/programs/xtensa-lx106-elf/bin
 export PATH=/usr/share/bcc/tools:$PATH
 export PATH=$PATH:$HOME/programs/station
-export IDF_PATH=$HOME/programs/esp-idf
+export IDF_PATH=$HOME/development/c/esp-idf
 
 export PATH=$PATH:$HOME/programs/gcc-arm-none-eabi-8-2019-q3-update/bin
+export PATH=$PATH:$HOME/programs/riscv32-esp-elf/bin
 export PATH=$PATH:$HOME/programs/riscv/bin
+export PATH=$PATH:$HOME/programs/xpack-riscv-none-embed-gcc-10.1.0-1.1/bin
 export PATH=$PATH:$HOME/programs/node-v10.16.3-linux-x64/bin
 export PATH=$PATH:$HOME/programs/zola
 export PATH=$PATH:$HOME/programs/JLink_Linux_V648b_x86_64
 
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/sbin
+
+#export GDK_SCALE=1.2
+#GDK_DPI_SCALE=0.5
+export QT_FONT_DPI=109
