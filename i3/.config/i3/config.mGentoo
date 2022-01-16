@@ -4,14 +4,14 @@
 #   Following code injected from config.mGentoo
 #
 
-set $mon1 DisplayPort-1
-set $mon2 DisplayPort-0
+set $mon1 DisplayPort-0
+set $mon2 DisplayPort-1
 set $mon3 DisplayPort-2
 
 # Assign workspaces to monitors
 # workspace $workspace1 output [Monitor COnnection]
-workspace $wrk9 output $mon2
-workspace $wrk10 output $mon2
+workspace $wrk9 output $mon3
+workspace $wrk10 output $mon3
 workspace $wrk3 output $mon1 # Set editor to open on main mon always
 
 # move focus to the monitors
