@@ -16,6 +16,9 @@ pre_linux() {
 
 	# append per pc config
 	cat $i3_path/config.$hname >> $i3_path/config
+
+	# append common
+	cat $i3_path/config.common >> $i3_path/config
 }
 
 pre_macos() {

@@ -40,7 +40,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec zsh -c "rofi -show run -terminal kitty -lines 5"
+bindsym $mod+d exec zsh -c "rofi -show run -terminal kitty -lines 5 -theme $HOME/.cache/wal/colors-rofi-dark.rasi"
 
 bindsym $mod+Tab workspace back_and_forth
 
@@ -229,10 +229,10 @@ new_window pixel 0
 focus_on_window_activation focus
 
 # theme switcher (change wallpaper and pywal)
-bindsym $mod+t exec --no-startup-id zsh -c "rofi -show themes:$HOME/.config/rofi/themeswitch.sh"
+bindsym $mod+t exec --no-startup-id zsh -c "rofi -theme $HOME/.cache/wal/colors-rofi-dark.rasi -show themes:$HOME/.config/rofi/themeswitch.sh"
 
 # Display switcher
-bindsym $mod+Shift+d exec --no-startup-id zsh -c "rofi -show mode:$HOME/.config/rofi/displayswitch.sh"
+bindsym $mod+Shift+d exec --no-startup-id zsh -c "rofi -theme $HOME/.cache/wal/colors-rofi-dark.rasi -show mode:$HOME/.config/rofi/displayswitch.sh"
 
 
 # i3 power
@@ -256,13 +256,3 @@ assign [class="discord"] $wrk9
 assign [class="looking-glass-client"] 7
 assign [class="Pavucontrol"] $wrk10
 for_window [class="Station"] move to workspace $wrk8
-
-# exec once
-exec --no-startup-id "udiskie -Ant &"
-exec --no-startup-id spotify
-exec --no-startup-id "pavucontrol -t 0"
-exec --no-startup-id discord
-
-# Autorun
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id "compton"
