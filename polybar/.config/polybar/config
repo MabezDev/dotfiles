@@ -368,8 +368,8 @@ warn-temperature = 70
 
 [module/temperature]
 type = internal/temperature
-warn-temperature = 75
-hwmon-path = /sys/class/hwmon/hwmon0/temp2_input
+warn-temperature = 80
+hwmon-path = /sys/class/hwmon/hwmon0/temp1_input
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 

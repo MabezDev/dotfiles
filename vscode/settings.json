@@ -1,6 +1,6 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.colorTheme": "Monokai Dark Soda",
+    "workbench.colorTheme": "Wal",
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
         "[Monokai Dark Soda]": {
@@ -25,9 +25,20 @@
     "latex-workshop.view.pdf.viewer": "tab",
     "rust-analyzer.cargo.allFeatures": true,
     "redhat.telemetry.enabled": false,
-    "rust-analyzer.diagnostics.enableExperimental": false,
     "cSpell.userWords": [
         "Espressif's"
     ],
-    "errorLens.enabled": false
+    "errorLens.enabled": false,
+    "cmake.configureOnOpen": false,
+    "terminal.integrated.gpuAcceleration": "canvas",
+    // TODO hopefully this will be included in themes soon
+    "workbench.colorCustomizations": {
+        "editorInlayHint.background": "#2246461a",
+        "editorInlayHint.foreground": "#898a60",
+        "editorInlayHint.parameterBackground": "#00000000",
+        "editorInlayHint.parameterForeground": "#808080",
+        "editorInlayHint.typeBackground": "#00000000",
+        "editorInlayHint.typeForeground": "#808080",
+    },
+    "rust-analyzer.diagnostics.experimental.enable": false,
 }

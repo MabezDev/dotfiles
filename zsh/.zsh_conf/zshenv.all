@@ -16,6 +16,7 @@ export VISUAL=nvim
 
 alias vim="nvim"
 alias vi="nvim"
+alias mterm="python -m serial.tools.miniterm"
 
 # Font cripsness
 export FT2_SUBPIXEL_HINTING=1

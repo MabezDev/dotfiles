@@ -9,10 +9,10 @@ set $mon2 DisplayPort-1
 set $mon3 DisplayPort-2
 
 # Assign workspaces to monitors
-# workspace $workspace1 output [Monitor COnnection]
+# workspace $workspace1 output [Monitor Connection]
 workspace $wrk9 output $mon3
 workspace $wrk10 output $mon3
-workspace $wrk3 output $mon1 # Set editor to open on main mon always
+workspace $wrk3 output $mon2 # Set editor to open on main mon always
 
 # move focus to the monitors
 bindsym Control+$mod+Left focus output $mon3
@@ -25,7 +25,6 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute 
 
 
 exec --no-startup-id "$HOME/scripts/util/linux-monitors.sh"
-exec --no-startup-id "$HOME/scripts/util/pipewire-mic-filter.sh"
 
 exec --no-startup-id "ckb-next --background"
 

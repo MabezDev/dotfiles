@@ -40,7 +40,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec zsh -c "rofi -show run -terminal kitty -lines 5 -theme $HOME/.cache/wal/colors-rofi-dark.rasi"
+bindsym $mod+d exec zsh -c "rofi -show drun -lines 5 -theme $HOME/.cache/wal/colors-rofi-dark.rasi"
 
 bindsym $mod+Tab workspace back_and_forth
 
@@ -233,6 +233,9 @@ bindsym $mod+t exec --no-startup-id zsh -c "rofi -theme $HOME/.cache/wal/colors-
 
 # Display switcher
 bindsym $mod+Shift+d exec --no-startup-id zsh -c "rofi -theme $HOME/.cache/wal/colors-rofi-dark.rasi -show mode:$HOME/.config/rofi/displayswitch.sh"
+
+# calculator rofi
+bindsym $mod+c exec --no-startup-id zsh -c "rofi -theme $HOME/.cache/wal/colors-rofi-dark.rasi -show calc -modi calc -no-show-match -no-sort"
 
 
 # i3 power

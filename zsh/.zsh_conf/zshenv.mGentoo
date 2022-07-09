@@ -4,10 +4,12 @@
 ###############
 
 export PATH=$PATH:$HOME/programs/xtensa-esp32-elf/bin
+export PATH=$PATH:$HOME/programs/xtensa-esp32s2-elf/bin
+export PATH=$PATH:$HOME/programs/xtensa-esp32s3-elf/bin
 export PATH=$PATH:$HOME/programs/xtensa-lx106-elf/bin
+export PATH=$PATH:$HOME/programs/Logic_1.2.18
 export PATH=/usr/share/bcc/tools:$PATH
 export PATH=$PATH:$HOME/programs/station
-export IDF_PATH=$HOME/development/c/esp-idf
 
 export PATH=$PATH:$HOME/programs/gcc-arm-none-eabi-8-2019-q3-update/bin
 export PATH=$PATH:$HOME/programs/riscv32-esp-elf/bin

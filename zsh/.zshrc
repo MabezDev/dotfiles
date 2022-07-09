@@ -1,8 +1,5 @@
 
 
-# Alias
-alias mterm="python -m serial.tools.miniterm"
-
 # for alacritty, now required on all because of 4:3 wide lg monitor reporting a weird dpi
 export WINIT_X11_SCALE_FACTOR=1.0
 
