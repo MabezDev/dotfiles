@@ -41,4 +41,18 @@
         "editorInlayHint.typeForeground": "#808080",
     },
     "rust-analyzer.diagnostics.experimental.enable": false,
+    "grammarly.files.include": [
+        "**/README.md",
+        "**/readme.md",
+        "**/*.txt",
+        "**/*.md"
+    ],
+    "grammarly.config.suggestions.ConjunctionAtStartOfSentence": true,
+    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "workbench.editorAssociations": {
+        "*.bin": "hexEditor.hexedit"
+    }
 }

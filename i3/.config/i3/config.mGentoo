@@ -25,11 +25,7 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute 
 
 
 exec --no-startup-id "$HOME/scripts/util/linux-monitors.sh"
-
-exec --no-startup-id "ckb-next --background"
-
-exec --no-startup-id "xset dpms 3600 3600 3600"
-exec --no-startup-id "xset s 3600 3600"
+exec --no-startup-id "gentoo-pipewire-launcher"
 
 #
 #   End of injected code from config.mGentoo

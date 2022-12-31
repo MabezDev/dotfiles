@@ -60,7 +60,7 @@ modules-right = keyboard bluetooth xbacklight pulseaudio temperature temperature
 ;powermenu
 ;filesystem
 
-tray-position = ${env:TRAY_POS}
+tray-position = ${env:TRAY_POS:none}
 tray-transparent = true
 tray-maxsize = 20
 ;tray-position = right
