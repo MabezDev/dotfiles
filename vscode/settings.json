@@ -54,5 +54,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "workbench.editorAssociations": {
         "*.bin": "hexEditor.hexedit"
-    }
+    },
+    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false
 }

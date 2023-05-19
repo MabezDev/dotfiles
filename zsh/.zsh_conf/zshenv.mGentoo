@@ -11,7 +11,7 @@ export PATH=$PATH:$HOME/programs/Logic_1.2.18
 export PATH=/usr/share/bcc/tools:$PATH
 export PATH=$PATH:$HOME/programs/station
 
-export PATH=$PATH:$HOME/programs/gcc-arm-none-eabi-8-2019-q3-update/bin
+export PATH=$PATH:$HOME/programs/gcc-arm-none-eabi-10.3-2021.10/bin
 export PATH=$PATH:$HOME/programs/riscv32-esp-elf/bin
 export PATH=$PATH:$HOME/programs/riscv/bin
 export PATH=$PATH:$HOME/programs/xpack-riscv-none-embed-gcc-10.1.0-1.1/bin
