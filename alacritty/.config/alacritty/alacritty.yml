@@ -23,7 +23,8 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 
-#window:
+window:
+  opacity: 0.98
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -339,7 +340,7 @@ font:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.98
+#background_opacity: 0.98
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -790,7 +791,7 @@ shell:
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward    }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward   }
 
-#debug:
+debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
 
@@ -810,3 +811,4 @@ shell:
 
   # Print all received window events.
   #print_events: false
+  renderer: gles2 

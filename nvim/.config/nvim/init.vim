@@ -14,7 +14,7 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
 Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Semantic language support
 Plug 'autozimu/LanguageClient-neovim', {
@@ -23,7 +23,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 
 Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
+Plug 'roxma/nvim-yarp', { 'do': 'pip install --user --break-system-packages -r requirements.txt' }
 
 " Syntactic language support
 Plug 'rust-lang/rust.vim'
