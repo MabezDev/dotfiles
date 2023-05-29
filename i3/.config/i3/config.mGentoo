@@ -27,6 +27,11 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle $update # mute 
 exec --no-startup-id "$HOME/scripts/util/linux-monitors.sh"
 exec --no-startup-id "gentoo-pipewire-launcher"
 
+# For sway
+# output DP-1 mode 2560x1440@169.831Hz
+# output DP-2 mode 2560x1440@169.831Hz
+# output DP-3 mode 2560x1440@169.831Hz
+
 #
 #   End of injected code from config.mGentoo
 #
