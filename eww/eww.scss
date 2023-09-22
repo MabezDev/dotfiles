@@ -1,0 +1,57 @@
+
+
+
+.bar_widget {
+background-color: #000000;
+border-radius: 16px;
+}
+
+*{
+    all: unset;
+}
+
+.hpanel {
+    min-height: 2.2em;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.8);
+
+    .tray {
+        margin-right: 1em;
+    }
+
+    .icon {
+        margin: 4px;
+    }
+
+    .button-bin {
+        margin: 3px 2px;
+
+        &.launcher {
+            margin-left: 4px
+        }
+
+        &.powermenu {
+            margin-right: 4px
+        }
+    }
+
+    .button {
+        .icon {
+            font-size: 1.2em;
+        }
+
+        >* {
+            padding: 0 .7em
+        }
+
+        &.workspaces {
+            .workspace-btn {
+                label {
+                    font-size: 1.2em;
+                }
+                margin: 2px;
+            }
+        }
+    }
+}

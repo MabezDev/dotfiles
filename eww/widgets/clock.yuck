@@ -1,0 +1,9 @@
+
+
+
+(defpoll time
+:interval "15"
+'date +%H:%M')
+
+(defwidget clock []
+time)

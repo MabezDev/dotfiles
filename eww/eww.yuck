@@ -1,0 +1,74 @@
+(include "./widgets/hyprland-workspaces.yuck")
+(include "./widgets/clock.yuck")
+
+(defvar day "0")
+(defvar month "0")
+(defvar year "0")
+
+
+; sadly duplication is needed here for each monitor
+(defwindow bar0
+    :monitor 0
+    :exclusive true
+    :stacking "fg"
+    :namespace "eww_bar"
+    :geometry (geometry :width "100%"
+                        :height "2%"
+                        :anchor "top center")(hbar))
+
+(defwindow bar1
+    :monitor 1
+    :exclusive true
+    :stacking "fg"
+    :namespace "eww_bar"
+    :geometry (geometry :width "100%"
+                        :height "2%"
+                        :anchor "top center")(hbar))
+
+(defwindow bar2
+    :monitor 2
+    :exclusive true
+    :stacking "fg"
+    :namespace "eww_bar"
+    :geometry (geometry :width "100%"
+                        :height "2%"
+                        :anchor "top center")(hbar))
+
+(defwidget hbar [] (centerbox
+    :class "hpanel ${workspaces.active_empty ? "floating" : ""}"
+    (box
+        (panel_workspaces :orientation "h")
+    )
+    (box
+        (clock)
+    )
+    (box
+        :class "tray"
+        :halign "end"
+        (clock)
+    )
+))
+
+;; Calendar window
+(defwindow calendar
+  :geometry 
+    (geometry 
+      :x "1465px" 
+      :y "65px"
+      :width "415px"
+      :height "100px")
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore "false"
+  (box
+    :class "cal"
+    :orientation "h"
+    :valign "fill"
+    :halign "fill"
+    (calendar
+      :day day
+      :month month
+      :year year
+      :show-details "true"
+      :show-heading "true"
+      :show-day-names "true")))

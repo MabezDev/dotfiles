@@ -1,4 +1,5 @@
 {
+    "window.titleBarStyle": "custom",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Wal",
     "editor.semanticTokenColorCustomizations": {
@@ -30,7 +31,6 @@
     ],
     "errorLens.enabled": false,
     "cmake.configureOnOpen": false,
-    "terminal.integrated.gpuAcceleration": "canvas",
     // TODO hopefully this will be included in themes soon
     "workbench.colorCustomizations": {
         "editorInlayHint.background": "#2246461a",
@@ -55,6 +55,8 @@
     "workbench.editorAssociations": {
         "*.bin": "hexEditor.hexedit"
     },
-    "window.zoomLevel": 1,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "workbench.editor.untitled.hint": "hidden",
+    "terminal.integrated.gpuAcceleration": "canvas",
+    "window.zoomLevel": 1
 }
